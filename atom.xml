@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HUI</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://aclihui.com/"/>
+  <updated>2018-12-02T07:55:17.600Z</updated>
+  <id>https://aclihui.com/</id>
+  
+  <author>
+    <name>HUI</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://aclihui.com/2018/12/01/hello-world/"/>
+    <id>https://aclihui.com/2018/12/01/hello-world/</id>
+    <published>2018-12-01T12:22:54.750Z</published>
+    <updated>2018-12-02T07:55:17.600Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>安卓菜单</title>
+    <link href="https://aclihui.com/2018/11/23/android-menu/"/>
+    <id>https://aclihui.com/2018/11/23/android-menu/</id>
+    <published>2018-11-23T04:54:45.000Z</published>
+    <updated>2018-12-02T07:57:11.717Z</updated>
+    
+    <content type="html"><![CDATA[<p>安卓菜单有点重要，在这里记录一下</p><h1 id="main-xml"><a href="#main-xml" class="headerlink" title="main.xml"></a>main.xml</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/customStyle"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"191dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="java-代码"><a href="#java-代码" class="headerlink" title="java 代码"></a>java 代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.aclihui.menu;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.graphics.Color;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.Menu;</span><br><span class="line"><span class="keyword">import</span> android.view.MenuItem;</span><br><span class="line"><span class="keyword">import</span> android.widget.RelativeLayout;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    RelativeLayout customStyle;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> MENU_00=Menu.FIRST;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> MENU_01=Menu.FIRST+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> MENU_02=Menu.FIRST+<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    menu.add(<span class="number">0</span>,MENU_00,<span class="number">1</span>,<span class="string">"红色"</span>);</span><br><span class="line">    menu.add(<span class="number">0</span>,MENU_01,<span class="number">2</span>,<span class="string">"灰色"</span>);</span><br><span class="line">    menu.add(<span class="number">0</span>,MENU_02,<span class="number">3</span>,<span class="string">"黑色"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        customStyle=(RelativeLayout)findViewById(R.id.customStyle);</span><br><span class="line">        <span class="keyword">switch</span> (item.getItemId())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                customStyle.setBackgroundColor(Color.RED);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                customStyle.setBackgroundColor(Color.GRAY);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                customStyle.setBackgroundColor(Color.BLACK);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;安卓菜单有点重要，在这里记录一下&lt;/p&gt;
+&lt;h1 id=&quot;main-xml&quot;&gt;&lt;a href=&quot;#main-xml&quot; class=&quot;headerlink&quot; title=&quot;main.xml&quot;&gt;&lt;/a&gt;main.xml&lt;/h1&gt;&lt;figure class=&quot;highlight 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux中who的用法</title>
+    <link href="https://aclihui.com/2018/04/27/linux-who-use/"/>
+    <id>https://aclihui.com/2018/04/27/linux-who-use/</id>
+    <published>2018-04-26T16:14:00.000Z</published>
+    <updated>2018-12-02T08:28:31.352Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux-中的who的用法"><a href="#linux-中的who的用法" class="headerlink" title="linux 中的who的用法"></a>linux 中的who的用法</h1><p>who的使用方法非常多，比较喜欢Linux中的who的用法</p><p>下面是Linux中的who 的使用的方法</p><p>经典的  </p><table><br><thead><br><tr><br><td><strong>参数</strong></td><br><td><strong>说明</strong></td><br></tr><br></thead><br><tbody><br><tr><br><td>-a</td><br><td>打印能打印的全部</td><br></tr><br><tr><br><td>-d</td><br><td>打印死掉的进程</td><br></tr><br><tr><br><td>-m</td><br><td>同am i,mom likes</td><br></tr><br><tr><br><td>-q</td><br><td>打印当前登录用户数及用户名</td><br></tr><br><tr><br><td>-u</td><br><td>打印当前登录用户登录信息</td><br></tr><br><tr><br><td>-r</td><br><td>打印运行等级</td><br></tr><br></tbody><br></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;linux-中的who的用法&quot;&gt;&lt;a href=&quot;#linux-中的who的用法&quot; class=&quot;headerlink&quot; title=&quot;linux 中的who的用法&quot;&gt;&lt;/a&gt;linux 中的who的用法&lt;/h1&gt;&lt;p&gt;who的使用方法非常多，比较喜欢Linux中
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>为什么我要写博客？</title>
+    <link href="https://aclihui.com/2018/01/26/why-i-open-blog/"/>
+    <id>https://aclihui.com/2018/01/26/why-i-open-blog/</id>
+    <published>2018-01-25T16:00:00.000Z</published>
+    <updated>2018-12-02T08:26:54.232Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>博客，这是个上个世纪的名词了，为什么我要写博客？<br>看过许多相关的知名的博客，有与SEO相关的<a href="http://lusongsong.com" target="_blank" rel="noopener">卢松松博客,</a>有相关于CSS知识的<a href="http://beiyuu.com/" target="_blank" rel="noopener">BeiYuu博客</a>，还有一个关于软件历史的<a href="http://liuyandong.com" target="_blank" rel="noopener">软件那些事儿</a>每个博客都有自己的专题，而我一个97后又会写出什么呢？<br>在BeiYuu看到Steve Losh的博客介绍真的很棒。<br>I’m a programmer, photographer, dancer &amp; bassist from Rochester, New York.”<br>是啊，这和我想要的生活多么相似。<br>I’m a programmer, photographer, piano music lover &amp;sport lover from China.”<br>本人很喜欢编程，摄影，听钢琴曲，运动，看到那篇博客自己恍然大悟，于是想写一个自己的博客，于是思考成形了。<br>副标题来源于<a href="https://www.kymjs.com/" target="_blank" rel="noopener">开源实验室</a>，这句话在我看到第一眼的时候就觉得很正确，于是副标题成形。  </p><h2 id="折腾的路程"><a href="#折腾的路程" class="headerlink" title="折腾的路程"></a>折腾的路程</h2><p>为了博客着实折腾了很久，在这期间开通了 <a href="https://www.jianshu.com/u/a787e7da3fb3" target="_blank" rel="noopener">简书</a> 博客，csdn博客（早就忘掉地址了），后来折腾GitHub pages ,做了基于hexo的网站，但心中满是不理想，想把博客做的内容为主，不想在一边写博客一边翻代码，在试了很多博客系统（wordpress,typecho,emblog..)后选择wordpress为建站模板，这个网站就起步了。</p><p><div></div></p><h2 id="其他注释"><a href="#其他注释" class="headerlink" title="其他注释"></a>其他注释</h2><p><b><div>此篇文章首发在我的第一的备案的域名中，但具体发布的时间也已经模糊不清了，当下找到的最近的时间点是在2018-1-26的时间发布的文章，不出意外的话就应该是这个时间</div></b></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;思考&quot;&gt;&lt;a href=&quot;#思考&quot; class=&quot;headerlink&quot; title=&quot;思考&quot;&gt;&lt;/a&gt;思考&lt;/h2&gt;&lt;p&gt;博客，这是个上个世纪的名词了，为什么我要写博客？&lt;br&gt;看过许多相关的知名的博客，有与SEO相关的&lt;a href=&quot;http://luson
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
