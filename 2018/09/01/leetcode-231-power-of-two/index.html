@@ -312,18 +312,18 @@ ga('send', 'pageview');
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/09/01/leetcode-217-contains-duplicate/" id="post-prev" class="post-nav-link">
+      <a href="/2018/09/03/leetcode-268-missing-number/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">LeetCode-217. Contains Duplicate</h4>
+        <h4 class="title">LeetCode-268. Missing Number</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/08/30/leetcode-283-move-zeroes/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/01/leetcode-217-contains-duplicate/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">LeetCode-283. Move Zeroes</h4>
+        <h4 class="title">LeetCode-217. Contains Duplicate</h4>
       </a>
     </div>
   
@@ -342,6 +342,30 @@ ga('send', 'pageview');
 
 
 
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "2xPdLzEW21g8LxK8ssE9Mhrs-gzGzoHsz",
+            appKey: "8Fa08hqopNmr4786Vr6WLk4O",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
 
 
 
