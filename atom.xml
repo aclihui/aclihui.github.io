@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-03T01:25:56.100Z</updated>
+  <updated>2018-12-03T07:33:11.605Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>寻找丢失的友链</title>
+    <link href="https://aclihui.com/find-friend/"/>
+    <id>https://aclihui.com/find-friend/</id>
+    <published>2018-12-03T07:30:55.000Z</published>
+    <updated>2018-12-03T07:33:11.605Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="因为更换了主题，友链找不到了，各位大佬补链请发邮件给1-aclihui-com-或者直接留言。"><a href="#因为更换了主题，友链找不到了，各位大佬补链请发邮件给1-aclihui-com-或者直接留言。" class="headerlink" title="因为更换了主题，友链找不到了，各位大佬补链请发邮件给1#aclihui.com 或者直接留言。"></a>因为更换了主题，友链找不到了，各位大佬补链请发邮件给1#aclihui.com 或者直接留言。</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;因为更换了主题，友链找不到了，各位大佬补链请发邮件给1-aclihui-com-或者直接留言。&quot;&gt;&lt;a href=&quot;#因为更换了主题，友链找不到了，各位大佬补链请发邮件给1-aclihui-com-或者直接留言。&quot; class=&quot;headerlink&quot; title
+      
+    
+    </summary>
+    
+      <category term="公告" scheme="https://aclihui.com/categories/%E5%85%AC%E5%91%8A/"/>
+    
+    
+      <category term="公告" scheme="https://aclihui.com/tags/%E5%85%AC%E5%91%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -233,19 +258,19 @@
   </entry>
   
   <entry>
-    <title>LeetCode-258. Add Digits</title>
-    <link href="https://aclihui.com/leetcode-258-add-digits/"/>
-    <id>https://aclihui.com/leetcode-258-add-digits/</id>
+    <title>LeetCode-283. Move Zeroes</title>
+    <link href="https://aclihui.com/leetcode-283-move-zeroes/"/>
+    <id>https://aclihui.com/leetcode-283-move-zeroes/</id>
     <published>2018-08-30T12:51:00.000Z</published>
-    <updated>2018-12-03T01:34:18.302Z</updated>
+    <updated>2018-12-03T01:31:46.229Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 38</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2. </span><br><span class="line">             Since 2 has only one digit, return it.</span><br></pre></td></tr></table></figure></p><p>Follow up:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could you do it without any loop/recursion in O(1) runtime?</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个数字根的问题，此题的解法其实有很多，但是最后一句换你能在时间复杂度为1的qiang</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p><p>Note:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You must do this in-place without making a copy of the array.</span><br><span class="line">Minimize the total number of operations.</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>此题比较基础，这就是冒泡排序的变形版，题目的要求不能新开辟新的数组空间，将所有的操作的的操作步数最小化。   </p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;numsSize ; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=nums[i];</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">                nums[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize=<span class="keyword">sizeof</span>(nums)/ <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    输出为[1,3,12,0,0]</span></span><br><span class="line"><span class="comment">//    执行函数</span></span><br><span class="line">    moveZeroes(nums,numsSize);</span><br><span class="line"><span class="comment">//    输出每个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d,"</span>,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given a non-negative integer num, repeatedly add all its digits until 
+        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array nums, write a function to move all 0’s to the end of it
       
     
     </summary>
@@ -262,19 +287,19 @@
   </entry>
   
   <entry>
-    <title>LeetCode-283. Move Zeroes</title>
-    <link href="https://aclihui.com/leetcode-283-move-zeroes/"/>
-    <id>https://aclihui.com/leetcode-283-move-zeroes/</id>
+    <title>LeetCode-258. Add Digits</title>
+    <link href="https://aclihui.com/leetcode-258-add-digits/"/>
+    <id>https://aclihui.com/leetcode-258-add-digits/</id>
     <published>2018-08-30T12:51:00.000Z</published>
-    <updated>2018-12-03T01:31:46.229Z</updated>
+    <updated>2018-12-03T01:34:18.302Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p><p>Note:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You must do this in-place without making a copy of the array.</span><br><span class="line">Minimize the total number of operations.</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>此题比较基础，这就是冒泡排序的变形版，题目的要求不能新开辟新的数组空间，将所有的操作的的操作步数最小化。   </p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;numsSize ; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=nums[i];</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">                nums[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize=<span class="keyword">sizeof</span>(nums)/ <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    输出为[1,3,12,0,0]</span></span><br><span class="line"><span class="comment">//    执行函数</span></span><br><span class="line">    moveZeroes(nums,numsSize);</span><br><span class="line"><span class="comment">//    输出每个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d,"</span>,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 38</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2. </span><br><span class="line">             Since 2 has only one digit, return it.</span><br></pre></td></tr></table></figure></p><p>Follow up:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could you do it without any loop/recursion in O(1) runtime?</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个数字根的问题，此题的解法其实有很多，但是最后一句换你能在时间复杂度为1的qiang</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array nums, write a function to move all 0’s to the end of it
+        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given a non-negative integer num, repeatedly add all its digits until 
       
     
     </summary>
@@ -545,35 +570,6 @@
       <category term="正则表达式" scheme="https://aclihui.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
       <category term="其他" scheme="https://aclihui.com/tags/%E5%85%B6%E4%BB%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode-70-climbing-stairs爬楼梯</title>
-    <link href="https://aclihui.com/leetcode-70-climbing-stairs/"/>
-    <id>https://aclihui.com/leetcode-70-climbing-stairs/</id>
-    <published>2018-08-22T14:15:00.000Z</published>
-    <updated>2018-12-03T01:40:10.455Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>You are climbing a stair case. It takes n steps to reach to the top.</p><p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p><p>Note: Given n will be a positive integer.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: 2</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: There are two ways to climb to the top.</span><br><span class="line">1. 1 step + 1 step</span><br><span class="line">2. 2 steps</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: There are three ways to climb to the top.</span><br><span class="line">1. 1 step + 1 step + 1 step</span><br><span class="line">2. 1 step + 2 steps</span><br><span class="line">3. 2 steps + 1 step</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这道题是利用了递归的一道问题，如果单纯的使用递归进行求解就会时间超限。因此必须用其他的方法求解。<br>在CPP中可以用vector动态的开辟数组，是一个比较好用的模板，用其解题可事半功倍。</p><h4 id="第一种，递归"><a href="#第一种，递归" class="headerlink" title="第一种，递归"></a>第一种，递归</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"><span class="comment">//    第一种解法递归</span></span><br><span class="line">     <span class="keyword">if</span> (n==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> climbStairs(n<span class="number">-1</span>)+climbStairs(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="第二种，vector方法"><a href="#第二种，vector方法" class="headerlink" title="第二种，vector方法"></a>第二种，vector方法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//    第二种解法</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res(n+<span class="number">1</span>);</span><br><span class="line">    res[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    res[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        res[i]=res[i<span class="number">-1</span>]+res[i<span class="number">-2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>注意要使用using namespace std 和#include&lt; vector &gt;</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;You are climbing a stair case. It takes n steps to reach to the top.&lt;/
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://aclihui.com/categories/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/categories/LeetCode/ACM/"/>
-    
-    
-      <category term="LeetCode" scheme="https://aclihui.com/tags/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/tags/ACM/"/>
     
   </entry>
   
