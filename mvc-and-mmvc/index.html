@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-116093450-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+    
+<!-- Tencent Speed -->
+<script>var _speedMark = new Date()</script>
+<!-- End Tencent Speed -->
+<!-- Tencent Analysis -->
+<script async src="//tajs.qq.com/stats?sId=66122903"></script>
+<!-- End Tencent Analysis -->
+
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?a9c1cf8118bdef8b37aac48cbf274638"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MVC和MMVC架构 | HUI BLOG | Focusing on the next gen AI. Avoid Maternal effect!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="架构">
+    <meta name="description" content="初因深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会">
+<meta name="keywords" content="架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC和MMVC架构">
+<meta property="og:url" content="https://aclihui.com/mvc-and-mmvc/index.html">
+<meta property="og:site_name" content="HUI BLOG">
+<meta property="og:description" content="初因深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png">
+<meta property="og:updated_time" content="2018-12-16T12:50:54.228Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MVC和MMVC架构">
+<meta name="twitter:description" content="初因深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会">
+<meta name="twitter:image" content="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="HUI BLOG" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+<style type="text/css">
+html {
+FILTER: gray;
+-webkit-filter: grayscale(100%);
+}
+</style>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" class="avatar waves-effect waves-circle waves-light">
+          <img src="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HUI</h5>
+          <a href="mailto:i@aclihui.com" title="i@aclihui.com" class="mail">i@aclihui.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/aclihui" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/aclihui" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MVC和MMVC架构</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MVC和MMVC架构</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-16T12:11:52.000Z" itemprop="datePublished" class="page-time">
+  2018-12-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/架构/">架构</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#初因"><span class="post-toc-number">1.</span> <span class="post-toc-text">初因</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MVC架构"><span class="post-toc-number">2.</span> <span class="post-toc-text">MVC架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型（来自维基百科的解释-注1）"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">模型（来自维基百科的解释,注1）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视图"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">视图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#控制器"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">控制器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MMVC"><span class="post-toc-number">3.</span> <span class="post-toc-text">MMVC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#M"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">M</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#View"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">View</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ViewModle"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ViewModle</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">C</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引用"><span class="post-toc-number">4.</span> <span class="post-toc-text">引用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MVC实现"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">MVC实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MFC"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">MFC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Java"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">Java</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NET"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">.NET</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows-Forms"><span class="post-toc-number">4.1.4.</span> <span class="post-toc-text">Windows Forms</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Perl"><span class="post-toc-number">4.1.5.</span> <span class="post-toc-text">Perl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ruby-on-Rails"><span class="post-toc-number">4.1.6.</span> <span class="post-toc-text">Ruby on Rails</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Python"><span class="post-toc-number">4.1.7.</span> <span class="post-toc-text">Python</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaScript"><span class="post-toc-number">4.1.8.</span> <span class="post-toc-text">JavaScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PHP"><span class="post-toc-number">4.1.9.</span> <span class="post-toc-text">PHP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ActionScript-3"><span class="post-toc-number">4.1.10.</span> <span class="post-toc-text">ActionScript 3</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-mvc-and-mmvc" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MVC和MMVC架构</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-16 20:11:52" datetime="2018-12-16T12:11:52.000Z" itemprop="datePublished">2018-12-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/架构/">架构</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="初因"><a href="#初因" class="headerlink" title="初因"></a>初因</h1><p>深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。</p>
+<h1 id="MVC架构"><a href="#MVC架构" class="headerlink" title="MVC架构"></a>MVC架构</h1><p>M:Model模型 V: View视图 C:Controller控制器</p>
+<h2 id="模型（来自维基百科的解释-注1）"><a href="#模型（来自维基百科的解释-注1）" class="headerlink" title="模型（来自维基百科的解释,注1）"></a>模型（来自维基百科的解释,注1）</h2><p>M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会被如何显示或是如何被操作。但是 Model 中数据的变化一般会通过一种刷新机制被公布。为了实现这种机制，那些用于监视此 Model 的 View 必须事先在此 Model 上注册，从而，View 可以了解在数据 Model 上发生的改变。（比如：观察者模式（软件设计模式））  </p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>V:能够实现数据有目的的显示（理论上，这不是必需的）。在 View 中一般没有程序上的逻辑。为了实现 View 上的刷新功能，View 需要访问它监视的数据模型（Model），因此应该事先在被它监视的数据那里注册。    </p>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p>起到不同层面间的组织作用，用于控制应用程序的流程。它处理事件并作出响应。“事件”包括用户的行为和数据 Model 上的改变。<br>展示图:<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>此时我们发现，相互关系如图所示。<br>M负责控制View的显示，V需要时刻监视M的情况，而C则为相事件对M进行处理。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MVC架构是一种业务逻辑和数据分离的方法，<strong>这个方法假设前提是如果业务逻辑被聚集到一个部件里面，而且页面和用户围绕数据的交互能被改进和个性化而不需要重新编写业务逻辑</strong>。MVC被独特的发展起来用于映射传统的输入，处理和输出功能在一个逻辑的图形化界面结构中。(注2)</p>
+<h1 id="MMVC"><a href="#MMVC" class="headerlink" title="MMVC"></a>MMVC</h1><p>MMVC是在MVC中间加入一层ViewModel起到适配（一些Model建模为了与其他系统实现完全隔离，存储的只是id，此处需要根据id去组装起所需的数据）,隔离扩展。</p>
+<h2 id="M"><a href="#M" class="headerlink" title="M"></a>M</h2><p>完全隔离的Model只会被引用（监视），不会引用外部的东西，通常只会对需要的数据进行建模（比如id），不需要的数据则不需要进行建模。</p>
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>承担各种界面事件交互逻辑，其核心关键词是：数据展示、操作。其中除了特定的操作、交互功能外，最为重要的三个功能点，即是初始化、刷新、返回值、事件。        </p>
+<h2 id="ViewModle"><a href="#ViewModle" class="headerlink" title="ViewModle"></a>ViewModle</h2><p>网站上没有多少介绍</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>和MVC架构基本相同。</p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>1.<br>2.<a href="https://www.cnblogs.com/suriyel/articles/3332408.html" target="_blank" rel="noopener">https://www.cnblogs.com/suriyel/articles/3332408.html</a></p>
+<h2 id="MVC实现"><a href="#MVC实现" class="headerlink" title="MVC实现"></a>MVC实现</h2><h3 id="MFC"><a href="#MFC" class="headerlink" title="MFC"></a>MFC</h3><p>微软所推出的MFC Document/View架构是早期对于MVC模式的实现，MFC将程序分成CView以及CDocument两大类别，其中的Document对应MVC中的 Model ，View 相当于MVC中的 View＋Controller，再加上CWinApp类别，合成三大项。但是基本上MFC是一个失败的MVC模式作品。</p>
+<p>由于MFC之下的Document/View 定义过于模糊，未将Controller（MessageMap）部分取出，因此 Controller 可以置入 View 或Document，但不管置入哪一方面，都会与View或Document绑死，没有弹性。</p>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>Java 平台企业版 (J2EE)<br>和其他的各种框架不一样，J2EE为模型对象（Model Objects）定义了一个规范。</p>
+<p>视图(View)<br>在J2EE应用程序中，视图（View）可能由Java Server Page(JSP)担任。生成 View 的代码则可能是一个servlet的一部分，特别是在客户端服务端交互的时候。<br>控制器（Controller）<br>J2EE应用中，Controller 可能是一个servlet。<br>除了可直接以J2EE来撰写外，亦可用其他框架来撰写，常见的有Struts2、Spring Framework……等等。<br>模型（Model）<br>Model 则是由一个实体Bean来实现。<br>Java Swing<br>Swing是一个标准的MVC结构. ComponentUI代表 View, 负责描画组件. 组件尤其 Model 层, 比如JTextField的Document, JTable的TableModel, JTree的TreeModel等等. 而Control可能不是很明显, 我们或许可以简单的将其Event机制看作一个Swing团队开发给开发者的 Controller。</p>
+<p>作为Java开发者, 如果想理解MVC的结构, 学习Swing的确是个不错的选择.</p>
+<h3 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h3><p>ASP.NET<br>在ASP.NET中，针对视图（View）和控制器（Controller）的模式没有被很好地定义。而模型（Model）则留给开发者去设计。</p>
+<p>视图（View）<br>ASPX和ASCX文件被用来处理 View 的职责。在这个设计中 View 实际上是从 Controller 继承而来。这个和Smalltalk的实施有所不同，在Smalltalk中不同的类都有指针互相指向对方.<br>控制器（Controllers）<br>Controller 的职责被分割成两部分。事件（Event）的产生和传输是框架的一部分，更明确的说是Page和Control两个类。而事件的处理则在分离的代码中实现。<br>模型（Model）<br>ASP.NET 不严格需要一个 Model。开发者可以自行选择创建一个 Model 类，但是很多人选择放弃这一步，直接把事件处理放在 Controller 里处理任何计算、数据保存等等。但用 Model 来包含商业逻辑和数据访问是可实现的。<br>ASP.NET MVC<br>ASP.NET MVC，在2013年10月17日稳定版本已到5.0版。[3]<br>此外，在ASP.NET MVC中，一般情况下Model通常搭配LINQ to SQL类别（使用O/R Designer工具所制作而成的DBML档）或ADO.NET实体数据模型（Entity Data Model，使用ADO.NET Entity Framework制作出的EDMX档）来实现。</p>
+<h3 id="Windows-Forms"><a href="#Windows-Forms" class="headerlink" title="Windows Forms"></a>Windows Forms</h3><p>在WinForms中，这个针对视图（View）和控制器（Controller）的模式已经很好的定义。而模型（Model）则留给开发者去设计。</p>
+<p>视图（View）<br>由Form或者Control类继承来的一个类处理 View 的职责。在WinForm这个例子中 View 和 Controller 被编译在同一个类中，这个和ASP.NET不同。<br>控制器（Controller）<br>Controller 的职责被分割成三部分。事件（Event）的产生和传输是操作系统的一部分。在.Net框架中Form和Control类将不同的事件转发给相应的事件处理器。而事件的处理则在分离的代码中实现。<br>模型（Model）<br>就像ASP.NET一样，WinForm不严格需要一个 Model。开发者可以自行选择创建一个 Model 类，但是很多人选择放弃这一步，直接把事件处理放在 Controller 里处理任何计算、数据保存等等。也就是说用Model来包含商业逻辑和数据访问。</p>
+<h3 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h3><p>Catalyst和Jifty是透过Perl语言所开发出来的Web Framework，都采用Model-View-Controller 架构。Catalyst 本身只是做了 Controller，View 和 Model 让开发者自由选用 CPAN 上的模块开发，例如 Template 和 Template Declare 都可用来产生视图。Jifty 将 MVC 完全实做完成，View 的部分在早期版本使用 Mason 实做，较新版本使用 Template Declare。</p>
+<h3 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h3><p>Ruby on Rails是透过Ruby语言所开发出来的 Web Framework，也是采用 Model-View-Controller 架构。Model 部分使用 Active Record 概念实做，加上 Migration 机制，使得其 Model 结构非常容易控制。</p>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python 有许多的 MVC 架构。最常用的有 Django 和 TurboGears。</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Backbone.js<br>Angular.js<br>Ember.js<br>JavaScriptMVC<br>Model-View-Controller (MVC) with JavaScript</p>
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>CakePHP<br>CodeIgniter<br>prado<br>symfony<br>Yii Framework<br>Zend Framework<br>Phalcon<br>Laravel<br>ThinkPHP</p>
+<h3 id="ActionScript-3"><a href="#ActionScript-3" class="headerlink" title="ActionScript 3"></a>ActionScript 3</h3><p>PureMVC Standard for ActionScript 3</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-16T12:50:54.228Z" itemprop="dateUpdated">2018-12-16 20:50:54</time>
+</span><br>
+
+
+        
+        所有文章遵循CC4.0约定，转载请注明作者及来源 ，本文地址：<a href="/mvc-and-mmvc/" target="_blank" rel="external">https://aclihui.com/mvc-and-mmvc/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://aclihui.com">
+            <img src="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" alt="HUI">
+            HUI
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aclihui.com/mvc-and-mmvc/&title=《MVC和MMVC架构》 — HUI BLOG&pic=https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aclihui.com/mvc-and-mmvc/&title=《MVC和MMVC架构》 — HUI BLOG&source=Focusing on the next gen AI. Avoid Maternal effect!" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://aclihui.com/mvc-and-mmvc/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MVC和MMVC架构》 — HUI BLOG&url=https://aclihui.com/mvc-and-mmvc/&via=https://aclihui.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://aclihui.com/mvc-and-mmvc/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/docker-first-install/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">第一次安装docker</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "2xPdLzEW21g8LxK8ssE9Mhrs-gzGzoHsz",
+            appKey: "8Fa08hqopNmr4786Vr6WLk4O",
+            avatar: "mm",
+            placeholder: "留下你的小脚印 o(*////▽////*)q",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HUI &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aclihui.com/mvc-and-mmvc/&title=《MVC和MMVC架构》 — HUI BLOG&pic=https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aclihui.com/mvc-and-mmvc/&title=《MVC和MMVC架构》 — HUI BLOG&source=Focusing on the next gen AI. Avoid Maternal effect!" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://aclihui.com/mvc-and-mmvc/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MVC和MMVC架构》 — HUI BLOG&url=https://aclihui.com/mvc-and-mmvc/&via=https://aclihui.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://aclihui.com/mvc-and-mmvc/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://aclihui.com/mvc-and-mmvc/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
