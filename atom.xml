@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-17T10:18:57.390Z</updated>
+  <updated>2018-12-17T14:58:00.408Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker基本命令</title>
+    <link href="https://aclihui.com/docker-base-commend/"/>
+    <id>https://aclihui.com/docker-base-commend/</id>
+    <published>2018-12-17T14:44:34.000Z</published>
+    <updated>2018-12-17T14:58:00.408Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>忽然发现这么多日子，又在重新学习docker的基本指令，真是很让人头皮发麻啊。QAQ<br>开始啦</p><h1 id="查看镜像文件docker-images"><a href="#查看镜像文件docker-images" class="headerlink" title="查看镜像文件docker images"></a>查看镜像文件docker images</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images</span><br><span class="line">```  </span><br><span class="line">| 表格名称 | 中文译名 | 中文译名 |备注|</span><br><span class="line">| ------ | ------ | ------ |------|</span><br><span class="line">| REPOSITORY | 仓库 | 来自于哪个仓库 |无|</span><br><span class="line">| TAG | 标签 | 标签信息 |无|</span><br><span class="line">| IMAGE | ID | 镜像ID |唯一标示镜像|</span><br><span class="line">| CREATED | 镜像创建的时间 | 镜像ID |标记的是原镜像创建的时间，和自身什么时候下载没关系|</span><br><span class="line">| SIZE | 大小 | 镜像ID |镜像的大小|</span><br><span class="line"><span class="comment"># 查询镜像信息 sudo docker inspect ubuntu:18.04</span></span><br><span class="line">```bash</span><br><span class="line">sudo docker inspect ubuntu:18.04</span><br></pre></td></tr></table></figure><p>特定类型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect -f &#123;&#123;<span class="string">".Architecture"</span>&#125;&#125; ubuntu:18.04</span><br></pre></td></tr></table></figure></p><h1 id="寻找镜像docker-search"><a href="#寻找镜像docker-search" class="headerlink" title="寻找镜像docker search"></a>寻找镜像docker search</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker search nginx</span><br></pre></td></tr></table></figure><h1 id="删除镜像-docker-rmi"><a href="#删除镜像-docker-rmi" class="headerlink" title="删除镜像 docker rmi"></a>删除镜像 docker rmi</h1><p>这个比较容易理解 docker rm（删除）i(镜像)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi NAME:TAG</span><br></pre></td></tr></table></figure></p><p>比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo docker rmi ubuntu:18.04</span><br></pre></td></tr></table></figure></p><h1 id="查看正在运行的容器"><a href="#查看正在运行的容器" class="headerlink" title="查看正在运行的容器"></a>查看正在运行的容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure><h1 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器ID</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;忽然发现这么多日子，又在重新学习docker的基本指令，真是很让人头皮发麻啊。QAQ&lt;br&gt;开始啦&lt;/p&gt;
+&lt;h1 id=&quot;查看镜像文件do
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://aclihui.com/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://aclihui.com/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>安卓简单登录界面</title>
@@ -516,35 +542,6 @@
       
       
         &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Write a function that takes an unsigned integer and returns the number
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://aclihui.com/categories/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/categories/LeetCode/ACM/"/>
-    
-    
-      <category term="LeetCode" scheme="https://aclihui.com/tags/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/tags/ACM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-169. Majority Element</title>
-    <link href="https://aclihui.com/leetcode-169-majority-element/"/>
-    <id>https://aclihui.com/leetcode-169-majority-element/</id>
-    <published>2018-08-27T06:57:00.000Z</published>
-    <updated>2018-12-03T01:25:47.862Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p><p>You may assume that the array is non-empty and the majority element always exist in the array.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,2,3]</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,2,1,1,1,2,2]</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本来想强行暴力，解决问题，但无奈时间超限</p><h4 id="暴力法-run-time-error"><a href="#暴力法-run-time-error" class="headerlink" title="暴力法 run time error"></a>暴力法 run time error</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">int</span> *num= (<span class="keyword">int</span> *) <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;numsSize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[j])</span><br><span class="line">            &#123;</span><br><span class="line">                num[i]++;</span><br><span class="line">            &#125; <span class="comment">//end if</span></span><br><span class="line">        &#125; <span class="comment">//end for</span></span><br><span class="line">    &#125;<span class="comment">// end for</span></span><br><span class="line"><span class="comment">//   判断最大值输出</span></span><br><span class="line">    <span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> imax=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(max&lt;num[i]) &#123;</span><br><span class="line">            max = num[i];</span><br><span class="line">            imax = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[imax];</span><br></pre></td></tr></table></figure><h4 id="时间简短版"><a href="#时间简短版" class="headerlink" title="时间简短版"></a>时间简短版</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmpfunc</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> * a, <span class="keyword">const</span> <span class="keyword">void</span> * b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ( *(<span class="keyword">int</span>*)a - *(<span class="keyword">int</span>*)b );</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line"> qsort(nums,numsSize,<span class="keyword">sizeof</span>(<span class="keyword">int</span>),cmpfunc);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> nums[numsSize/<span class="number">2</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array of size n, find the majority element. The majority elem
       
     
     </summary>
