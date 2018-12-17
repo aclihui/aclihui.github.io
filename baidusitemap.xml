@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://aclihui.com/android-login/</loc>
+    <lastmod>2018-12-17T10:18:57.390Z</lastmod>
+  </url>  <url>
     <loc>https://aclihui.com/mvc-and-mmvc/</loc>
-    <lastmod>2018-12-16T12:50:54.228Z</lastmod>
+    <lastmod>2018-12-16T12:51:31.927Z</lastmod>
   </url>  <url>
     <loc>https://aclihui.com/docker-first-install/</loc>
     <lastmod>2018-12-15T15:26:32.262Z</lastmod>

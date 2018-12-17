@@ -42,19 +42,19 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="架构">
-    <meta name="description" content="初因深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会">
+    <meta name="description" content="初因原文地址：https://www.aclihui.com深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“C">
 <meta name="keywords" content="架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MVC和MMVC架构">
 <meta property="og:url" content="https://aclihui.com/mvc-and-mmvc/index.html">
 <meta property="og:site_name" content="HUI BLOG">
-<meta property="og:description" content="初因深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会">
+<meta property="og:description" content="初因原文地址：https://www.aclihui.com深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“C">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png">
-<meta property="og:updated_time" content="2018-12-16T12:50:54.228Z">
+<meta property="og:updated_time" content="2018-12-16T12:51:31.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC和MMVC架构">
-<meta name="twitter:description" content="初因深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会">
+<meta name="twitter:description" content="初因原文地址：https://www.aclihui.com深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“C">
 <meta name="twitter:image" content="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png">
     
         <link rel="alternate" type="application/atom+xml" title="HUI BLOG" href="/atom.xml">
@@ -227,7 +227,7 @@ FILTER: gray;
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="初因"><a href="#初因" class="headerlink" title="初因"></a>初因</h1><p>深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。</p>
+            <h1 id="初因"><a href="#初因" class="headerlink" title="初因"></a>初因</h1><p>原文地址：<a href="https://www.aclihui.com" target="_blank" rel="noopener">https://www.aclihui.com</a><br>深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。</p>
 <h1 id="MVC架构"><a href="#MVC架构" class="headerlink" title="MVC架构"></a>MVC架构</h1><p>M:Model模型 V: View视图 C:Controller控制器</p>
 <h2 id="模型（来自维基百科的解释-注1）"><a href="#模型（来自维基百科的解释-注1）" class="headerlink" title="模型（来自维基百科的解释,注1）"></a>模型（来自维基百科的解释,注1）</h2><p>M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会被如何显示或是如何被操作。但是 Model 中数据的变化一般会通过一种刷新机制被公布。为了实现这种机制，那些用于监视此 Model 的 View 必须事先在此 Model 上注册，从而，View 可以了解在数据 Model 上发生的改变。（比如：观察者模式（软件设计模式））  </p>
 <h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>V:能够实现数据有目的的显示（理论上，这不是必需的）。在 View 中一般没有程序上的逻辑。为了实现 View 上的刷新功能，View 需要访问它监视的数据模型（Model），因此应该事先在被它监视的数据那里注册。    </p>
@@ -268,7 +268,7 @@ FILTER: gray;
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-16T12:50:54.228Z" itemprop="dateUpdated">2018-12-16 20:50:54</time>
+    最后更新时间：<time datetime="2018-12-16T12:51:31.927Z" itemprop="dateUpdated">2018-12-16 20:51:31</time>
 </span><br>
 
 
@@ -349,7 +349,14 @@ FILTER: gray;
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/android-login/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">安卓简单登录界面</h4>
+      </a>
+    </div>
   
 
   
