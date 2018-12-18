@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-17T14:58:00.408Z</updated>
+  <updated>2018-12-18T14:58:34.115Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows安装docker</title>
+    <link href="https://aclihui.com/docker-install-windows/"/>
+    <id>https://aclihui.com/docker-install-windows/</id>
+    <published>2018-12-18T12:28:01.000Z</published>
+    <updated>2018-12-18T14:58:34.115Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此问题还是有点问题，毕竟一般的系统是win10 Home版本，不是windows 10 pro 或商业版，所以暂时有些问题。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;此问题还是有点问题，毕竟一般的系统是win10 Home版本，不是windows 10 pro 或商业版，所以暂时有些问题。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://aclihui.com/categories/docker/"/>
+    
+      <category term="windows" scheme="https://aclihui.com/categories/docker/windows/"/>
+    
+    
+      <category term="docker" scheme="https://aclihui.com/tags/docker/"/>
+    
+      <category term="windows" scheme="https://aclihui.com/tags/windows/"/>
+    
+  </entry>
   
   <entry>
     <title>docker基本命令</title>
@@ -384,19 +414,19 @@
   </entry>
   
   <entry>
-    <title>LeetCode-217. Contains Duplicate</title>
-    <link href="https://aclihui.com/leetcode-217-contains-duplicate/"/>
-    <id>https://aclihui.com/leetcode-217-contains-duplicate/</id>
+    <title>leetcode-231-power-of-two</title>
+    <link href="https://aclihui.com/leetcode-231-power-of-two/"/>
+    <id>https://aclihui.com/leetcode-231-power-of-two/</id>
     <published>2018-09-01T13:57:00.000Z</published>
-    <updated>2018-12-03T01:36:56.878Z</updated>
+    <updated>2018-12-03T01:35:53.752Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array of integers, find if the array contains any duplicates.</p><p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,1]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,4]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个基础的问题 分析比较简单只要，当前的数组中的数值和后面的有相等的就返回true 知道最后一个都没有相同的返回false</p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;numsSize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[j])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize= <span class="keyword">sizeof</span>(nums)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,containsDuplicate(nums,numsSize));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an integer, write a function to determine if it is a power of two.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 1</span><br><span class="line">Output: true </span><br><span class="line">Explanation: 20 = 1</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 16</span><br><span class="line">Output: true</span><br><span class="line">Explanation: 24 = 16</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 218</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个求2的N次方的题目，较为基础.<br>第一种解题方法：直接求是不是即可（暴力判断）；<br>第二种解法：位运算，判断所有位数上仅有一位是1其他的是0即可求得。  </p><h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">bool isPowerOfTwo(int n) &#123;</span><br><span class="line">            if(n&lt;=0)</span><br><span class="line">            &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(n==1||n==2)</span><br><span class="line">            &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">            while(n&gt;1)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n%2==1)</span><br><span class="line">                &#123;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">                else n=n/2;</span><br><span class="line">            &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n=218;</span><br><span class="line">    printf(&quot;%d&quot;,isPowerOfTwo(n));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array of integers, find if the array contains any duplicates.
+        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an integer, write a function to determine if it is a power of tw
       
     
     </summary>
@@ -413,19 +443,19 @@
   </entry>
   
   <entry>
-    <title>leetcode-231-power-of-two</title>
-    <link href="https://aclihui.com/leetcode-231-power-of-two/"/>
-    <id>https://aclihui.com/leetcode-231-power-of-two/</id>
+    <title>LeetCode-217. Contains Duplicate</title>
+    <link href="https://aclihui.com/leetcode-217-contains-duplicate/"/>
+    <id>https://aclihui.com/leetcode-217-contains-duplicate/</id>
     <published>2018-09-01T13:57:00.000Z</published>
-    <updated>2018-12-03T01:35:53.752Z</updated>
+    <updated>2018-12-03T01:36:56.878Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an integer, write a function to determine if it is a power of two.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 1</span><br><span class="line">Output: true </span><br><span class="line">Explanation: 20 = 1</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 16</span><br><span class="line">Output: true</span><br><span class="line">Explanation: 24 = 16</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 218</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个求2的N次方的题目，较为基础.<br>第一种解题方法：直接求是不是即可（暴力判断）；<br>第二种解法：位运算，判断所有位数上仅有一位是1其他的是0即可求得。  </p><h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">bool isPowerOfTwo(int n) &#123;</span><br><span class="line">            if(n&lt;=0)</span><br><span class="line">            &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(n==1||n==2)</span><br><span class="line">            &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">            while(n&gt;1)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n%2==1)</span><br><span class="line">                &#123;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">                else n=n/2;</span><br><span class="line">            &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n=218;</span><br><span class="line">    printf(&quot;%d&quot;,isPowerOfTwo(n));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array of integers, find if the array contains any duplicates.</p><p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,1]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,4]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个基础的问题 分析比较简单只要，当前的数组中的数值和后面的有相等的就返回true 知道最后一个都没有相同的返回false</p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;numsSize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[j])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize= <span class="keyword">sizeof</span>(nums)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,containsDuplicate(nums,numsSize));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an integer, write a function to determine if it is a power of tw
+        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array of integers, find if the array contains any duplicates.
       
     
     </summary>
@@ -513,35 +543,6 @@
       
       
         &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;You are playing the following Nim Game with your friend: There is a he
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://aclihui.com/categories/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/categories/LeetCode/ACM/"/>
-    
-    
-      <category term="LeetCode" scheme="https://aclihui.com/tags/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/tags/ACM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-191. Number of 1 Bits</title>
-    <link href="https://aclihui.com/leetcode-191-number-of-1-bits/"/>
-    <id>https://aclihui.com/leetcode-191-number-of-1-bits/</id>
-    <published>2018-08-28T13:48:00.000Z</published>
-    <updated>2018-12-03T01:27:15.234Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Write a function that takes an unsigned integer and returns the number of ‘1’ bits it has (also known as the Hamming weight).</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 11</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: Integer 11 has binary representation 00000000000000000000000000001011</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 128</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: Integer 128 has binary representation 00000000000000000000000010000000</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个明显的位运算的问题，尤其是实例中的解释的问题，尤其显示为对位进行的操作，因此这里有一个简单的方法，时间复杂度比较的低，对最后一位进行按位与运算。</p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> normal=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)</span><br><span class="line">    &#123;</span><br><span class="line"><span class="comment">//        对n和1求位运算 指定最后一位为1的位运算</span></span><br><span class="line">        <span class="keyword">if</span>(n &amp; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ++normal;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        对n进行向右移动</span></span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> normal;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Write a function that takes an unsigned integer and returns the number
       
     
     </summary>
