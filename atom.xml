@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-21T03:00:36.425Z</updated>
+  <updated>2018-12-21T15:29:15.588Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tensorflow_install</title>
+    <link href="https://aclihui.com/tensorflow-install/"/>
+    <id>https://aclihui.com/tensorflow-install/</id>
+    <published>2018-12-21T14:29:39.000Z</published>
+    <updated>2018-12-21T15:29:15.588Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第一步-安装Anaconda-3同时获得"><a href="#第一步-安装Anaconda-3同时获得" class="headerlink" title="第一步 安装Anaconda 3同时获得"></a>第一步 安装Anaconda 3同时获得</h1> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181221225018.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h1 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h1> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181221230211.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><h2 id="安装CPU版"><a href="#安装CPU版" class="headerlink" title="安装CPU版"></a>安装CPU版</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade --ignore-installed tensorflow</span><br></pre></td></tr></table></figure><h2 id="安装GPU版本"><a href="#安装GPU版本" class="headerlink" title="安装GPU版本"></a>安装GPU版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade --ignore-installed tensorflow-gpu</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;第一步-安装Anaconda-3同时获得&quot;&gt;&lt;a href=&quot;#第一步-安装Anaconda-3同时获得&quot; class=&quot;headerlink&quot; title=&quot;第一步 安装Anaconda 3同时获得&quot;&gt;&lt;/a&gt;第一步 安装Anaconda 3同时获得&lt;/h1&gt; 
+      
+    
+    </summary>
+    
+      <category term="TensorFlow" scheme="https://aclihui.com/categories/TensorFlow/"/>
+    
+    
+      <category term="TensorFlow" scheme="https://aclihui.com/tags/TensorFlow/"/>
+    
+  </entry>
   
   <entry>
     <title>automation_think</title>
@@ -468,35 +493,6 @@
       
       
         &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array containing n distinct numbers taken from 0, 1, 2, …, n,
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://aclihui.com/categories/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/categories/LeetCode/ACM/"/>
-    
-    
-      <category term="LeetCode" scheme="https://aclihui.com/tags/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/tags/ACM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode-231-power-of-two</title>
-    <link href="https://aclihui.com/leetcode-231-power-of-two/"/>
-    <id>https://aclihui.com/leetcode-231-power-of-two/</id>
-    <published>2018-09-01T13:57:00.000Z</published>
-    <updated>2018-12-03T01:35:53.752Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an integer, write a function to determine if it is a power of two.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 1</span><br><span class="line">Output: true </span><br><span class="line">Explanation: 20 = 1</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 16</span><br><span class="line">Output: true</span><br><span class="line">Explanation: 24 = 16</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 218</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个求2的N次方的题目，较为基础.<br>第一种解题方法：直接求是不是即可（暴力判断）；<br>第二种解法：位运算，判断所有位数上仅有一位是1其他的是0即可求得。  </p><h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">bool isPowerOfTwo(int n) &#123;</span><br><span class="line">            if(n&lt;=0)</span><br><span class="line">            &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(n==1||n==2)</span><br><span class="line">            &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">            while(n&gt;1)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n%2==1)</span><br><span class="line">                &#123;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">                else n=n/2;</span><br><span class="line">            &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n=218;</span><br><span class="line">    printf(&quot;%d&quot;,isPowerOfTwo(n));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an integer, write a function to determine if it is a power of tw
       
     
     </summary>
