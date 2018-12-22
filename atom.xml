@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-22T15:25:37.236Z</updated>
+  <updated>2018-12-22T15:35:22.972Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://aclihui.com/octave-rumen/"/>
     <id>https://aclihui.com/octave-rumen/</id>
     <published>2018-12-22T15:16:08.000Z</published>
-    <updated>2018-12-22T15:25:37.236Z</updated>
+    <updated>2018-12-22T15:35:22.972Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>基础入门知识</p><h1 id="首先是简单的运算"><a href="#首先是简单的运算" class="headerlink" title="首先是简单的运算"></a>首先是简单的运算</h1><p>1+1<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222231751.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222231930.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h1 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h1><p>exp(1)函数<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222232107.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp，高等数学里以自然常数e为底的指数函数，它同时又是航模名词，全称Exponential(指数曲线)。</span><br></pre></td></tr></table></figure></p><h2 id="sin-1-2-pi-函数和sin-pi"><a href="#sin-1-2-pi-函数和sin-pi" class="headerlink" title="sin (1/2*pi) 函数和sin(pi)"></a>sin (1/2*pi) 函数和sin(pi)</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222232343.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>此时发现sin(pi)的数值极其小。</p><h1 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222232521.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>]]></content>
     
