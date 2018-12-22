@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-21T15:29:15.588Z</updated>
+  <updated>2018-12-22T15:24:24.348Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>octave入门</title>
+    <link href="https://aclihui.com/octave-rumen/"/>
+    <id>https://aclihui.com/octave-rumen/</id>
+    <published>2018-12-22T15:16:08.000Z</published>
+    <updated>2018-12-22T15:24:24.348Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>基础入门知识</p><h1 id="首先是简单的运算"><a href="#首先是简单的运算" class="headerlink" title="首先是简单的运算"></a>首先是简单的运算</h1><p>1+1<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222231751.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222231930.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h1 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h1><p>exp(1)函数<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222232107.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp，高等数学里以自然常数e为底的指数函数，它同时又是航模名词，全称Exponential(指数曲线)。</span><br></pre></td></tr></table></figure></p><h2 id="sin-1-2-pi-函数和sin-pi"><a href="#sin-1-2-pi-函数和sin-pi" class="headerlink" title="sin (1/2*pi) 函数和sin(pi)"></a>sin (1/2*pi) 函数和sin(pi)</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181222232343.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>此时发现sin(pi)的数值极其小。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;基础入门知识&lt;/p&gt;
+&lt;h1 id=&quot;首先是简单的运算&quot;&gt;&lt;a href=&quot;#首先是简单的运算&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+      <category term="octave" scheme="https://aclihui.com/categories/octave/"/>
+    
+    
+      <category term="octave" scheme="https://aclihui.com/tags/octave/"/>
+    
+  </entry>
   
   <entry>
     <title>tensorflow_install</title>
@@ -493,35 +519,6 @@
       
       
         &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array containing n distinct numbers taken from 0, 1, 2, …, n,
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://aclihui.com/categories/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/categories/LeetCode/ACM/"/>
-    
-    
-      <category term="LeetCode" scheme="https://aclihui.com/tags/LeetCode/"/>
-    
-      <category term="ACM" scheme="https://aclihui.com/tags/ACM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-217. Contains Duplicate</title>
-    <link href="https://aclihui.com/leetcode-217-contains-duplicate/"/>
-    <id>https://aclihui.com/leetcode-217-contains-duplicate/</id>
-    <published>2018-09-01T13:57:00.000Z</published>
-    <updated>2018-12-03T01:36:56.878Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array of integers, find if the array contains any duplicates.</p><p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p><p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,1]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,4]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p><p>Example 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个基础的问题 分析比较简单只要，当前的数组中的数值和后面的有相等的就返回true 知道最后一个都没有相同的返回false</p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(numsSize==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;numsSize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[j])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize= <span class="keyword">sizeof</span>(nums)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,containsDuplicate(nums,numsSize));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array of integers, find if the array contains any duplicates.
       
     
     </summary>
