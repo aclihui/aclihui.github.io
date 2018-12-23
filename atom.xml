@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-23T13:19:16.597Z</updated>
+  <updated>2018-12-23T13:39:14.372Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>五分钟创建WordPress</title>
+    <link href="https://aclihui.com/quick-to-build-wp/"/>
+    <id>https://aclihui.com/quick-to-build-wp/</id>
+    <published>2018-12-23T13:29:15.000Z</published>
+    <updated>2018-12-23T13:39:14.372Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>docker实例 快速创建wp</p><h1 id="第一步输入命令"><a href="#第一步输入命令" class="headerlink" title="第一步输入命令"></a>第一步输入命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run --name db --env MYSQL_ROOT_PASSWORD=example -d mariadb</span><br><span class="line">docker run --name MyWordPress --link db:mysql -p 8080:80 -d wordpress</span><br></pre></td></tr></table></figure><p>下载中<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181223213325.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>下载完成<br>打开 <a href="http://192.168.99.100:8080" target="_blank" rel="noopener">http://192.168.99.100:8080</a><br>开始安装<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181223213641.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>填写必要的信息<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181223213811.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure></p><h1 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181223213904.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>撒花</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h1&gt;&lt;p&gt;docker实例 快速创建wp&lt;/p&gt;
+&lt;h1 id=&quot;第一步输入命令&quot;&gt;&lt;a href=&quot;#第一步输入命令&quot; class=&quot;headerl
+      
+    
+    </summary>
+    
+      <category term="WordPress" scheme="https://aclihui.com/categories/WordPress/"/>
+    
+      <category term="Docker" scheme="https://aclihui.com/categories/WordPress/Docker/"/>
+    
+    
+      <category term="WordPress" scheme="https://aclihui.com/tags/WordPress/"/>
+    
+      <category term="Docker" scheme="https://aclihui.com/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>window10家庭版尝试安装docker</title>
@@ -497,31 +527,6 @@
     
     
       <category term="Android" scheme="https://aclihui.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>主题</title>
-    <link href="https://aclihui.com/newtheme/"/>
-    <id>https://aclihui.com/newtheme/</id>
-    <published>2018-11-03T14:58:00.000Z</published>
-    <updated>2018-12-03T01:43:36.088Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="2018-12-1-使用indigo主题修改版作为网站主题"><a href="#2018-12-1-使用indigo主题修改版作为网站主题" class="headerlink" title="2018-12-1 使用indigo主题修改版作为网站主题"></a>2018-12-1 使用indigo主题修改版作为网站主题</h1><h1 id="2018-11-03-22-58-43-星期六挖坑写主题，在新主题写完发布前暂不更新QAQ"><a href="#2018-11-03-22-58-43-星期六挖坑写主题，在新主题写完发布前暂不更新QAQ" class="headerlink" title="2018-11-03 22:58:43 星期六挖坑写主题，在新主题写完发布前暂不更新QAQ."></a>2018-11-03 22:58:43 星期六挖坑写主题，在新主题写完发布前暂不更新QAQ.</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;2018-12-1-使用indigo主题修改版作为网站主题&quot;&gt;&lt;a href=&quot;#2018-12-1-使用indigo主题修改版作为网站主题&quot; class=&quot;headerlink&quot; title=&quot;2018-12-1 使用indigo主题修改版作为网站主题&quot;&gt;&lt;/a
-      
-    
-    </summary>
-    
-      <category term="主题" scheme="https://aclihui.com/categories/%E4%B8%BB%E9%A2%98/"/>
-    
-    
-      <category term="主题" scheme="https://aclihui.com/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
