@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-25T14:59:44.938Z</updated>
+  <updated>2018-12-26T14:59:58.781Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android列表</title>
+    <link href="https://aclihui.com/android-list/"/>
+    <id>https://aclihui.com/android-list/</id>
+    <published>2018-12-26T14:58:54.000Z</published>
+    <updated>2018-12-26T14:59:58.781Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="今天开源了简单了列表"><a href="#今天开源了简单了列表" class="headerlink" title="今天开源了简单了列表"></a>今天开源了简单了列表</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;今天开源了简单了列表&quot;&gt;&lt;a href=&quot;#今天开源了简单了列表&quot; class=&quot;headerlink&quot; title=&quot;今天开源了简单了列表&quot;&gt;&lt;/a&gt;今天开源了简单了列表&lt;/h1&gt;
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="https://aclihui.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://aclihui.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>docker安装PHP环境</title>
@@ -509,31 +534,6 @@
       <category term="JavaScript" scheme="https://aclihui.com/tags/JavaScript/"/>
     
       <category term="WEB" scheme="https://aclihui.com/tags/WEB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>寻找丢失的友链</title>
-    <link href="https://aclihui.com/find-friend/"/>
-    <id>https://aclihui.com/find-friend/</id>
-    <published>2018-12-03T07:30:55.000Z</published>
-    <updated>2018-12-06T14:31:29.666Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="因为更换了主题，友链找不到了，各位大佬补链请发邮件到i-aclihui-com-或者直接留言。"><a href="#因为更换了主题，友链找不到了，各位大佬补链请发邮件到i-aclihui-com-或者直接留言。" class="headerlink" title="因为更换了主题，友链找不到了，各位大佬补链请发邮件到i#aclihui.com 或者直接留言。"></a>因为更换了主题，友链找不到了，各位大佬补链请发邮件到i#aclihui.com 或者直接留言。</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;因为更换了主题，友链找不到了，各位大佬补链请发邮件到i-aclihui-com-或者直接留言。&quot;&gt;&lt;a href=&quot;#因为更换了主题，友链找不到了，各位大佬补链请发邮件到i-aclihui-com-或者直接留言。&quot; class=&quot;headerlink&quot; title
-      
-    
-    </summary>
-    
-      <category term="公告" scheme="https://aclihui.com/categories/%E5%85%AC%E5%91%8A/"/>
-    
-    
-      <category term="公告" scheme="https://aclihui.com/tags/%E5%85%AC%E5%91%8A/"/>
     
   </entry>
   
