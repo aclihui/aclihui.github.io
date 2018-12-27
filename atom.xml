@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-26T14:59:58.781Z</updated>
+  <updated>2018-12-27T14:55:17.971Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>早睡早起</title>
+    <link href="https://aclihui.com/zaosuizaoqi/"/>
+    <id>https://aclihui.com/zaosuizaoqi/</id>
+    <published>2018-12-27T14:54:31.000Z</published>
+    <updated>2018-12-27T14:55:17.971Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="日志" scheme="https://aclihui.com/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="日志" scheme="https://aclihui.com/tags/%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
   
   <entry>
     <title>Android列表</title>
@@ -504,36 +522,6 @@
     
     
       <category term="JavaScript" scheme="https://aclihui.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网页JavaScript函数重写--解决JS代码时间限制</title>
-    <link href="https://aclihui.com/web-console-code/"/>
-    <id>https://aclihui.com/web-console-code/</id>
-    <published>2018-12-07T14:49:08.000Z</published>
-    <updated>2018-12-07T14:52:15.343Z</updated>
-    
-    <content type="html"><![CDATA[<p>占位–明天补上(<em>╹▽╹</em>)。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;占位–明天补上(&lt;em&gt;╹▽╹&lt;/em&gt;)。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="WEB" scheme="https://aclihui.com/categories/WEB/"/>
-    
-      <category term="JavaScript" scheme="https://aclihui.com/categories/WEB/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://aclihui.com/tags/JavaScript/"/>
-    
-      <category term="WEB" scheme="https://aclihui.com/tags/WEB/"/>
     
   </entry>
   
