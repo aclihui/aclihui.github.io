@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-28T14:54:48.174Z</updated>
+  <updated>2018-12-29T15:24:52.311Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用jenkins</title>
+    <link href="https://aclihui.com/try-jenkins/"/>
+    <id>https://aclihui.com/try-jenkins/</id>
+    <published>2018-12-29T15:23:54.000Z</published>
+    <updated>2018-12-29T15:24:52.311Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="jenkins" scheme="https://aclihui.com/categories/jenkins/"/>
+    
+    
+      <category term="jenkins" scheme="https://aclihui.com/tags/jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>docker_prime</title>
@@ -489,31 +507,6 @@
     
     
       <category term="docker" scheme="https://aclihui.com/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>类似于微信下拉菜单</title>
-    <link href="https://aclihui.com/Android_XiaLaMenu/"/>
-    <id>https://aclihui.com/Android_XiaLaMenu/</id>
-    <published>2018-12-15T14:37:57.000Z</published>
-    <updated>2018-12-15T14:48:16.152Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="安卓第一个demo-下拉菜单"><a href="#安卓第一个demo-下拉菜单" class="headerlink" title="安卓第一个demo 下拉菜单"></a>安卓第一个demo 下拉菜单</h1><h2 id="第一步新建项目"><a href="#第一步新建项目" class="headerlink" title="第一步新建项目"></a>第一步新建项目</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215223932.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="第二步-选择api"><a href="#第二步-选择api" class="headerlink" title="第二步 选择api"></a>第二步 选择api</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215224025.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="第三步-选择空白模板"><a href="#第三步-选择空白模板" class="headerlink" title="第三步  选择空白模板"></a>第三步  选择空白模板</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215224124.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="第四步-保持默认"><a href="#第四步-保持默认" class="headerlink" title="第四步 保持默认"></a>第四步 保持默认</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215224143.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="剩下的核心代码-明天补全。"><a href="#剩下的核心代码-明天补全。" class="headerlink" title="剩下的核心代码 明天补全。"></a>剩下的核心代码 明天补全。</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;安卓第一个demo-下拉菜单&quot;&gt;&lt;a href=&quot;#安卓第一个demo-下拉菜单&quot; class=&quot;headerlink&quot; title=&quot;安卓第一个demo 下拉菜单&quot;&gt;&lt;/a&gt;安卓第一个demo 下拉菜单&lt;/h1&gt;&lt;h2 id=&quot;第一步新建项目&quot;&gt;&lt;a href=
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="https://aclihui.com/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="https://aclihui.com/tags/Android/"/>
     
   </entry>
   
