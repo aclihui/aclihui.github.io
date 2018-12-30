@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-29T15:24:52.311Z</updated>
+  <updated>2018-12-30T15:32:51.645Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>list_search</title>
+    <link href="https://aclihui.com/list-search/"/>
+    <id>https://aclihui.com/list-search/</id>
+    <published>2018-12-30T15:32:12.000Z</published>
+    <updated>2018-12-30T15:32:51.645Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Android" scheme="https://aclihui.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://aclihui.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>使用jenkins</title>
@@ -482,31 +500,6 @@
     
     
       <category term="架构" scheme="https://aclihui.com/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一次安装docker</title>
-    <link href="https://aclihui.com/docker-first-install/"/>
-    <id>https://aclihui.com/docker-first-install/</id>
-    <published>2018-12-15T14:56:56.000Z</published>
-    <updated>2018-12-15T15:26:32.262Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="这是第一次安装docker"><a href="#这是第一次安装docker" class="headerlink" title="这是第一次安装docker"></a>这是第一次安装docker</h1><p>原文地址：<a href="https://www.aclihui.com" target="_blank" rel="noopener">https://www.aclihui.com</a><br>之所以是第一次安装docker就是因为docker的安装确实消耗一些时间，这次直接采用在外网进行安装，加速安装的进程。下面正式开始。</p><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><h2 id="第一步，开新的服务器"><a href="#第一步，开新的服务器" class="headerlink" title="第一步，开新的服务器"></a>第一步，开新的服务器</h2><p>此步骤比较的简单，我使用服务器是digitalOcean的服务器。随开随用，随关随停。<br>置如下: centos7.5<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215230213.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure></p><h2 id="首先检查内核版本号（必须在3-10以上）"><a href="#首先检查内核版本号（必须在3-10以上）" class="headerlink" title="首先检查内核版本号（必须在3.10以上）"></a>首先检查内核版本号（必须在3.10以上）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure><h2 id="将yum包更新到最新版本"><a href="#将yum包更新到最新版本" class="headerlink" title="将yum包更新到最新版本"></a>将yum包更新到最新版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure><h2 id="卸载旧版本（因为我是首次安装不存在旧版本）"><a href="#卸载旧版本（因为我是首次安装不存在旧版本）" class="headerlink" title="卸载旧版本（因为我是首次安装不存在旧版本）"></a>卸载旧版本（因为我是首次安装不存在旧版本）</h2><p>卸载旧版本代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker  docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure></p><h2 id="安装所需要的依赖包"><a href="#安装所需要的依赖包" class="headerlink" title="安装所需要的依赖包"></a>安装所需要的依赖包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure><h2 id="配置docker源"><a href="#配置docker源" class="headerlink" title="配置docker源"></a>配置docker源</h2><p>首先检查docker源存不存在<br>此时我发现我的centos7.5的docker源是存在的，因此直接安装就好。<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215231806.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>若果不存在 就先添加docker源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure></p><h2 id="检查版本号（因为直接安装和加源安装并不相同，因此我的此步骤省略了）"><a href="#检查版本号（因为直接安装和加源安装并不相同，因此我的此步骤省略了）" class="headerlink" title="检查版本号（因为直接安装和加源安装并不相同，因此我的此步骤省略了）"></a>检查版本号（因为直接安装和加源安装并不相同，因此我的此步骤省略了）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure><h2 id="此时检查版本号（验证是否安装成功）"><a href="#此时检查版本号（验证是否安装成功）" class="headerlink" title="此时检查版本号（验证是否安装成功）"></a>此时检查版本号（验证是否安装成功）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215232248.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181215232413.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>此时启动完毕。安装流程结束。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;这是第一次安装docker&quot;&gt;&lt;a href=&quot;#这是第一次安装docker&quot; class=&quot;headerlink&quot; title=&quot;这是第一次安装docker&quot;&gt;&lt;/a&gt;这是第一次安装docker&lt;/h1&gt;&lt;p&gt;原文地址：&lt;a href=&quot;https://www.
-      
-    
-    </summary>
-    
-      <category term="docker" scheme="https://aclihui.com/categories/docker/"/>
-    
-    
-      <category term="docker" scheme="https://aclihui.com/tags/docker/"/>
     
   </entry>
   
