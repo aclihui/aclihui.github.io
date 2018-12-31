@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2018-12-30T15:32:51.645Z</updated>
+  <updated>2018-12-31T14:44:34.913Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>异步</title>
+    <link href="https://aclihui.com/yibu/"/>
+    <id>https://aclihui.com/yibu/</id>
+    <published>2018-12-31T14:43:50.000Z</published>
+    <updated>2018-12-31T14:44:34.913Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="后台" scheme="https://aclihui.com/categories/%E5%90%8E%E5%8F%B0/"/>
+    
+    
+      <category term="后台" scheme="https://aclihui.com/tags/%E5%90%8E%E5%8F%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>list_search</title>
@@ -475,31 +493,6 @@
     
     
       <category term="安卓" scheme="https://aclihui.com/tags/%E5%AE%89%E5%8D%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MVC和MMVC架构</title>
-    <link href="https://aclihui.com/mvc-and-mmvc/"/>
-    <id>https://aclihui.com/mvc-and-mmvc/</id>
-    <published>2018-12-16T12:11:52.000Z</published>
-    <updated>2018-12-16T12:51:31.927Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="初因"><a href="#初因" class="headerlink" title="初因"></a>初因</h1><p>原文地址：<a href="https://www.aclihui.com" target="_blank" rel="noopener">https://www.aclihui.com</a><br>深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。</p><h1 id="MVC架构"><a href="#MVC架构" class="headerlink" title="MVC架构"></a>MVC架构</h1><p>M:Model模型 V: View视图 C:Controller控制器</p><h2 id="模型（来自维基百科的解释-注1）"><a href="#模型（来自维基百科的解释-注1）" class="headerlink" title="模型（来自维基百科的解释,注1）"></a>模型（来自维基百科的解释,注1）</h2><p>M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会被如何显示或是如何被操作。但是 Model 中数据的变化一般会通过一种刷新机制被公布。为了实现这种机制，那些用于监视此 Model 的 View 必须事先在此 Model 上注册，从而，View 可以了解在数据 Model 上发生的改变。（比如：观察者模式（软件设计模式））  </p><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>V:能够实现数据有目的的显示（理论上，这不是必需的）。在 View 中一般没有程序上的逻辑。为了实现 View 上的刷新功能，View 需要访问它监视的数据模型（Model），因此应该事先在被它监视的数据那里注册。    </p><h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p>起到不同层面间的组织作用，用于控制应用程序的流程。它处理事件并作出响应。“事件”包括用户的行为和数据 Model 上的改变。<br>展示图:<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><br>此时我们发现，相互关系如图所示。<br>M负责控制View的显示，V需要时刻监视M的情况，而C则为相事件对M进行处理。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MVC架构是一种业务逻辑和数据分离的方法，<strong>这个方法假设前提是如果业务逻辑被聚集到一个部件里面，而且页面和用户围绕数据的交互能被改进和个性化而不需要重新编写业务逻辑</strong>。MVC被独特的发展起来用于映射传统的输入，处理和输出功能在一个逻辑的图形化界面结构中。(注2)</p><h1 id="MMVC"><a href="#MMVC" class="headerlink" title="MMVC"></a>MMVC</h1><p>MMVC是在MVC中间加入一层ViewModel起到适配（一些Model建模为了与其他系统实现完全隔离，存储的只是id，此处需要根据id去组装起所需的数据）,隔离扩展。</p><h2 id="M"><a href="#M" class="headerlink" title="M"></a>M</h2><p>完全隔离的Model只会被引用（监视），不会引用外部的东西，通常只会对需要的数据进行建模（比如id），不需要的数据则不需要进行建模。</p><h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>承担各种界面事件交互逻辑，其核心关键词是：数据展示、操作。其中除了特定的操作、交互功能外，最为重要的三个功能点，即是初始化、刷新、返回值、事件。        </p><h2 id="ViewModle"><a href="#ViewModle" class="headerlink" title="ViewModle"></a>ViewModle</h2><p>网站上没有多少介绍</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>和MVC架构基本相同。</p><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>1.<br>2.<a href="https://www.cnblogs.com/suriyel/articles/3332408.html" target="_blank" rel="noopener">https://www.cnblogs.com/suriyel/articles/3332408.html</a></p><h2 id="MVC实现"><a href="#MVC实现" class="headerlink" title="MVC实现"></a>MVC实现</h2><h3 id="MFC"><a href="#MFC" class="headerlink" title="MFC"></a>MFC</h3><p>微软所推出的MFC Document/View架构是早期对于MVC模式的实现，MFC将程序分成CView以及CDocument两大类别，其中的Document对应MVC中的 Model ，View 相当于MVC中的 View＋Controller，再加上CWinApp类别，合成三大项。但是基本上MFC是一个失败的MVC模式作品。</p><p>由于MFC之下的Document/View 定义过于模糊，未将Controller（MessageMap）部分取出，因此 Controller 可以置入 View 或Document，但不管置入哪一方面，都会与View或Document绑死，没有弹性。</p><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>Java 平台企业版 (J2EE)<br>和其他的各种框架不一样，J2EE为模型对象（Model Objects）定义了一个规范。</p><p>视图(View)<br>在J2EE应用程序中，视图（View）可能由Java Server Page(JSP)担任。生成 View 的代码则可能是一个servlet的一部分，特别是在客户端服务端交互的时候。<br>控制器（Controller）<br>J2EE应用中，Controller 可能是一个servlet。<br>除了可直接以J2EE来撰写外，亦可用其他框架来撰写，常见的有Struts2、Spring Framework……等等。<br>模型（Model）<br>Model 则是由一个实体Bean来实现。<br>Java Swing<br>Swing是一个标准的MVC结构. ComponentUI代表 View, 负责描画组件. 组件尤其 Model 层, 比如JTextField的Document, JTable的TableModel, JTree的TreeModel等等. 而Control可能不是很明显, 我们或许可以简单的将其Event机制看作一个Swing团队开发给开发者的 Controller。</p><p>作为Java开发者, 如果想理解MVC的结构, 学习Swing的确是个不错的选择.</p><h3 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h3><p>ASP.NET<br>在ASP.NET中，针对视图（View）和控制器（Controller）的模式没有被很好地定义。而模型（Model）则留给开发者去设计。</p><p>视图（View）<br>ASPX和ASCX文件被用来处理 View 的职责。在这个设计中 View 实际上是从 Controller 继承而来。这个和Smalltalk的实施有所不同，在Smalltalk中不同的类都有指针互相指向对方.<br>控制器（Controllers）<br>Controller 的职责被分割成两部分。事件（Event）的产生和传输是框架的一部分，更明确的说是Page和Control两个类。而事件的处理则在分离的代码中实现。<br>模型（Model）<br>ASP.NET 不严格需要一个 Model。开发者可以自行选择创建一个 Model 类，但是很多人选择放弃这一步，直接把事件处理放在 Controller 里处理任何计算、数据保存等等。但用 Model 来包含商业逻辑和数据访问是可实现的。<br>ASP.NET MVC<br>ASP.NET MVC，在2013年10月17日稳定版本已到5.0版。[3]<br>此外，在ASP.NET MVC中，一般情况下Model通常搭配LINQ to SQL类别（使用O/R Designer工具所制作而成的DBML档）或ADO.NET实体数据模型（Entity Data Model，使用ADO.NET Entity Framework制作出的EDMX档）来实现。</p><h3 id="Windows-Forms"><a href="#Windows-Forms" class="headerlink" title="Windows Forms"></a>Windows Forms</h3><p>在WinForms中，这个针对视图（View）和控制器（Controller）的模式已经很好的定义。而模型（Model）则留给开发者去设计。</p><p>视图（View）<br>由Form或者Control类继承来的一个类处理 View 的职责。在WinForm这个例子中 View 和 Controller 被编译在同一个类中，这个和ASP.NET不同。<br>控制器（Controller）<br>Controller 的职责被分割成三部分。事件（Event）的产生和传输是操作系统的一部分。在.Net框架中Form和Control类将不同的事件转发给相应的事件处理器。而事件的处理则在分离的代码中实现。<br>模型（Model）<br>就像ASP.NET一样，WinForm不严格需要一个 Model。开发者可以自行选择创建一个 Model 类，但是很多人选择放弃这一步，直接把事件处理放在 Controller 里处理任何计算、数据保存等等。也就是说用Model来包含商业逻辑和数据访问。</p><h3 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h3><p>Catalyst和Jifty是透过Perl语言所开发出来的Web Framework，都采用Model-View-Controller 架构。Catalyst 本身只是做了 Controller，View 和 Model 让开发者自由选用 CPAN 上的模块开发，例如 Template 和 Template Declare 都可用来产生视图。Jifty 将 MVC 完全实做完成，View 的部分在早期版本使用 Mason 实做，较新版本使用 Template Declare。</p><h3 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h3><p>Ruby on Rails是透过Ruby语言所开发出来的 Web Framework，也是采用 Model-View-Controller 架构。Model 部分使用 Active Record 概念实做，加上 Migration 机制，使得其 Model 结构非常容易控制。</p><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python 有许多的 MVC 架构。最常用的有 Django 和 TurboGears。</p><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Backbone.js<br>Angular.js<br>Ember.js<br>JavaScriptMVC<br>Model-View-Controller (MVC) with JavaScript</p><h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>CakePHP<br>CodeIgniter<br>prado<br>symfony<br>Yii Framework<br>Zend Framework<br>Phalcon<br>Laravel<br>ThinkPHP</p><h3 id="ActionScript-3"><a href="#ActionScript-3" class="headerlink" title="ActionScript 3"></a>ActionScript 3</h3><p>PureMVC Standard for ActionScript 3</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;初因&quot;&gt;&lt;a href=&quot;#初因&quot; class=&quot;headerlink&quot; title=&quot;初因&quot;&gt;&lt;/a&gt;初因&lt;/h1&gt;&lt;p&gt;原文地址：&lt;a href=&quot;https://www.aclihui.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
-      
-    
-    </summary>
-    
-      <category term="架构" scheme="https://aclihui.com/categories/%E6%9E%B6%E6%9E%84/"/>
-    
-    
-      <category term="架构" scheme="https://aclihui.com/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
