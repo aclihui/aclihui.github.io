@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aclihui.com/"/>
-  <updated>2019-01-02T15:08:30.103Z</updated>
+  <updated>2019-01-04T14:33:14.078Z</updated>
   <id>https://aclihui.com/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>docker_jiqun</title>
+    <title>android_see</title>
+    <link href="https://aclihui.com/android-see/"/>
+    <id>https://aclihui.com/android-see/</id>
+    <published>2019-01-04T14:33:14.000Z</published>
+    <updated>2019-01-04T14:33:14.078Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="占位分类" scheme="https://aclihui.com/categories/%E5%8D%A0%E4%BD%8D%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="占位标签" scheme="https://aclihui.com/tags/%E5%8D%A0%E4%BD%8D%E6%A0%87%E7%AD%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker 集群</title>
     <link href="https://aclihui.com/docker-jiqun/"/>
     <id>https://aclihui.com/docker-jiqun/</id>
     <published>2019-01-02T15:06:46.000Z</published>
-    <updated>2019-01-02T15:08:30.103Z</updated>
+    <updated>2019-01-16T16:02:58.420Z</updated>
     
     <summary type="html">
     
@@ -458,32 +476,6 @@
       <category term="docker" scheme="https://aclihui.com/tags/docker/"/>
     
       <category term="windows" scheme="https://aclihui.com/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker基本命令</title>
-    <link href="https://aclihui.com/docker-base-commend/"/>
-    <id>https://aclihui.com/docker-base-commend/</id>
-    <published>2018-12-17T14:44:34.000Z</published>
-    <updated>2018-12-17T14:58:00.408Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>忽然发现这么多日子，又在重新学习docker的基本指令，真是很让人头皮发麻啊。QAQ<br>开始啦</p><h1 id="查看镜像文件docker-images"><a href="#查看镜像文件docker-images" class="headerlink" title="查看镜像文件docker images"></a>查看镜像文件docker images</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images</span><br><span class="line">```  </span><br><span class="line">| 表格名称 | 中文译名 | 中文译名 |备注|</span><br><span class="line">| ------ | ------ | ------ |------|</span><br><span class="line">| REPOSITORY | 仓库 | 来自于哪个仓库 |无|</span><br><span class="line">| TAG | 标签 | 标签信息 |无|</span><br><span class="line">| IMAGE | ID | 镜像ID |唯一标示镜像|</span><br><span class="line">| CREATED | 镜像创建的时间 | 镜像ID |标记的是原镜像创建的时间，和自身什么时候下载没关系|</span><br><span class="line">| SIZE | 大小 | 镜像ID |镜像的大小|</span><br><span class="line"><span class="comment"># 查询镜像信息 sudo docker inspect ubuntu:18.04</span></span><br><span class="line">```bash</span><br><span class="line">sudo docker inspect ubuntu:18.04</span><br></pre></td></tr></table></figure><p>特定类型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect -f &#123;&#123;<span class="string">".Architecture"</span>&#125;&#125; ubuntu:18.04</span><br></pre></td></tr></table></figure></p><h1 id="寻找镜像docker-search"><a href="#寻找镜像docker-search" class="headerlink" title="寻找镜像docker search"></a>寻找镜像docker search</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker search nginx</span><br></pre></td></tr></table></figure><h1 id="删除镜像-docker-rmi"><a href="#删除镜像-docker-rmi" class="headerlink" title="删除镜像 docker rmi"></a>删除镜像 docker rmi</h1><p>这个比较容易理解 docker rm（删除）i(镜像)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi NAME:TAG</span><br></pre></td></tr></table></figure></p><p>比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo docker rmi ubuntu:18.04</span><br></pre></td></tr></table></figure></p><h1 id="查看正在运行的容器"><a href="#查看正在运行的容器" class="headerlink" title="查看正在运行的容器"></a>查看正在运行的容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure><h1 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器ID</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;忽然发现这么多日子，又在重新学习docker的基本指令，真是很让人头皮发麻啊。QAQ&lt;br&gt;开始啦&lt;/p&gt;
-&lt;h1 id=&quot;查看镜像文件do
-      
-    
-    </summary>
-    
-      <category term="docker" scheme="https://aclihui.com/categories/docker/"/>
-    
-    
-      <category term="docker" scheme="https://aclihui.com/tags/docker/"/>
     
   </entry>
   
