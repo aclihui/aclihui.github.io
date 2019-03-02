@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-116093450-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+    
+<!-- Tencent Speed -->
+<script>var _speedMark = new Date()</script>
+<!-- End Tencent Speed -->
+<!-- Tencent Analysis -->
+<script async src="//tajs.qq.com/stats?sId=66122903"></script>
+<!-- End Tencent Analysis -->
+
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?a9c1cf8118bdef8b37aac48cbf274638"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>docker基础命令代码 | HUI BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="docker,docker command">
+    <meta name="description" content="部分未完成  存储和载入镜像上传镜像  docker iamges1sudo docker images 信息解读      表格名称 中文译名 作用解释 备注     REPOSITORY 仓库 来自于哪个仓库 无   TAG 标签 标签信息 无   IMAGE ID 镜像ID 唯一标示镜像 无   CREATED 创建时间 镜像创建的时间 标记的是原镜像创建的时间，和自身什么时候下载没关系">
+<meta name="keywords" content="docker,docker command">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker基础命令代码">
+<meta property="og:url" content="https://aclihui.com/docker-base-command/index.html">
+<meta property="og:site_name" content="HUI BLOG">
+<meta property="og:description" content="部分未完成  存储和载入镜像上传镜像  docker iamges1sudo docker images 信息解读      表格名称 中文译名 作用解释 备注     REPOSITORY 仓库 来自于哪个仓库 无   TAG 标签 标签信息 无   IMAGE ID 镜像ID 唯一标示镜像 无   CREATED 创建时间 镜像创建的时间 标记的是原镜像创建的时间，和自身什么时候下载没关系">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-images.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-inspect.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-inspect-json-eg.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-search-nginx.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-create-images-by-tag.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-rmi-image.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-rm-command.png">
+<meta property="og:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-rmi-image-id.png">
+<meta property="og:updated_time" content="2018-08-13T04:04:21.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker基础命令代码">
+<meta name="twitter:description" content="部分未完成  存储和载入镜像上传镜像  docker iamges1sudo docker images 信息解读      表格名称 中文译名 作用解释 备注     REPOSITORY 仓库 来自于哪个仓库 无   TAG 标签 标签信息 无   IMAGE ID 镜像ID 唯一标示镜像 无   CREATED 创建时间 镜像创建的时间 标记的是原镜像创建的时间，和自身什么时候下载没关系">
+<meta name="twitter:image" content="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-images.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="HUI BLOG" href="/rss2.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" class="avatar waves-effect waves-circle waves-light">
+          <img src="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HUI</h5>
+          <a href="mailto:i@aclihui.com" title="i@aclihui.com" class="mail">i@aclihui.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/aclihui" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/aclihui" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">docker基础命令代码</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">docker基础命令代码</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-03T01:57:30.000Z" itemprop="datePublished" class="page-time">
+  2018-08-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-iamges"><span class="post-toc-number">1.</span> <span class="post-toc-text">docker iamges</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-images-other-command"><span class="post-toc-number">2.</span> <span class="post-toc-text">docker images other command</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-images-NOTE"><span class="post-toc-number">3.</span> <span class="post-toc-text">docker images NOTE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-inspect"><span class="post-toc-number">4.</span> <span class="post-toc-text">docker inspect</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-search"><span class="post-toc-number">5.</span> <span class="post-toc-text">docker search</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为镜像加标签"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">为镜像加标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除镜像"><span class="post-toc-number">6.</span> <span class="post-toc-text">删除镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#docker-根据ID删除镜像"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">docker 根据ID删除镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除容器"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">删除容器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#例子"><span class="post-toc-number">6.1.1.1.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#运行新容器"><span class="post-toc-number">6.1.1.1.1.</span> <span class="post-toc-text">运行新容器</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#查看运行的镜像"><span class="post-toc-number">6.1.1.2.</span> <span class="post-toc-text">查看运行的镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#删除容器-1"><span class="post-toc-number">6.1.1.2.1.</span> <span class="post-toc-text">删除容器</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#删除单个容器"><span class="post-toc-number">6.1.1.2.2.</span> <span class="post-toc-text">删除单个容器</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#删除多个镜像"><span class="post-toc-number">6.1.1.2.3.</span> <span class="post-toc-text">删除多个镜像</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#删除镜像-1"><span class="post-toc-number">6.1.1.2.4.</span> <span class="post-toc-text">删除镜像</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建镜像"><span class="post-toc-number">7.</span> <span class="post-toc-text">创建镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于已有镜像创建镜像"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">基于已有镜像创建镜像</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储和载入镜像"><span class="post-toc-number">8.</span> <span class="post-toc-text">存储和载入镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储镜像"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">存储镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#载入镜像"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">载入镜像</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上传镜像"><span class="post-toc-number">9.</span> <span class="post-toc-text">上传镜像</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-docker-base-command" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">docker基础命令代码</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-03 09:57:30" datetime="2018-08-03T01:57:30.000Z" itemprop="datePublished">2018-08-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>部分未完成 </p>
+<p>存储和载入镜像<br>上传镜像</p>
+</blockquote>
+<h2 id="docker-iamges"><a href="#docker-iamges" class="headerlink" title="docker iamges"></a>docker iamges</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
+<p>信息解读  </p>
+<table>
+<thead>
+<tr>
+<th>表格名称</th>
+<th>中文译名</th>
+<th>作用解释</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REPOSITORY</td>
+<td>仓库</td>
+<td>来自于哪个仓库</td>
+<td>无</td>
+</tr>
+<tr>
+<td>TAG</td>
+<td>标签</td>
+<td>标签信息</td>
+<td>无</td>
+</tr>
+<tr>
+<td>IMAGE ID</td>
+<td>镜像ID</td>
+<td>唯一标示镜像</td>
+<td>无</td>
+</tr>
+<tr>
+<td>CREATED</td>
+<td>创建时间</td>
+<td>镜像创建的时间</td>
+<td>标记的是原镜像创建的时间，和自身什么时候下载没关系</td>
+</tr>
+<tr>
+<td>SIZE</td>
+<td>大小</td>
+<td>镜像的大小</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>镜像的ID唯一标示进行</strong><br><strong>镜像大小信息只是表示镜像的逻辑体积大小，实际上由于相同的镜像层本地只会储存一份，物理上占用的存储空间会小于各镜像的逻辑体积之和</strong><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-images.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="docker-images-other-command"><a href="#docker-images-other-command" class="headerlink" title="docker images other command"></a>docker images other command</h2><p>-a ,–all=ture|false:列出所有的镜像文件（包括临时文件）,默认为否<br>–digests=true|false:列出所有镜像的数字摘要值，默认为否<br>-f,–filter=[]:过滤列出的镜像，如dangling=true 值显示没有被使用的镜像；也可指定带有特定标注的镜像等；<br>–formal=”TEMPLATE”控制输出格式，如.ID代表ID信息，.Repository代表库信息等<br>–no-trunc=ture|false:对输出结果中 的太长的部分是否进行截断，such as the ID info ,default set is YES;<br>-q,–quiet=true|false:Only output the ID info ,defaut  set is no;  </p>
+<h2 id="docker-images-NOTE"><a href="#docker-images-NOTE" class="headerlink" title="docker images NOTE"></a>docker images NOTE</h2><p><strong>其中，对输出结果进行控制的选项如-f,–filter=[],–no-trunc=true|false、-q,–quiet=true|false 等，大部分子命令都支持</strong>  </p>
+<h2 id="docker-inspect"><a href="#docker-inspect" class="headerlink" title="docker inspect"></a>docker inspect</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect ubuntu:18.04</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-inspect.png" alt="docker-inspect-image" title="">
+                </div>
+                <div class="image-caption">docker-inspect-image</div>
+            </figure>
+<p>因为inspect 返回放数据为json 的类型的，以此可以带餐查询<br>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect -f &#123;&#123;<span class="string">".Architecture"</span>&#125;&#125; ubuntu:18.04</span><br></pre></td></tr></table></figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-inspect-json-eg.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="docker-search"><a href="#docker-search" class="headerlink" title="docker search"></a>docker search</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker search nginx</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-search-nginx.png" alt="docker-search-nginx" title="">
+                </div>
+                <div class="image-caption">docker-search-nginx</div>
+            </figure>
+<p><strong>docker search 的命令更新了很多,此处暂时不全部尝试。</strong>  </p>
+<h3 id="为镜像加标签"><a href="#为镜像加标签" class="headerlink" title="为镜像加标签"></a>为镜像加标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo docker tag 原镜像名称 新镜像名称</span><br></pre></td></tr></table></figure>
+<p>such as</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker tag ubuntu:latest myubuntu:latest</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-create-images-by-tag.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi NAME:TAG</span><br></pre></td></tr></table></figure>
+<p>such as<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi ubuntu:18.04</span><br></pre></td></tr></table></figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-rmi-image.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="docker-根据ID删除镜像"><a href="#docker-根据ID删除镜像" class="headerlink" title="docker 根据ID删除镜像"></a>docker 根据ID删除镜像</h3><p>删除步骤</p>
+<ul>
+<li>首先找到相对应的ID</li>
+<li>在删除对应的镜像<br><strong>如果相对应的正在运行的容器所依赖的镜像  需要先删除响应的容器文件,再继续做</strong> <h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器的ID</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>现在还没有发现有其他的方法去删除容器</strong></p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><h6 id="运行新容器"><a href="#运行新容器" class="headerlink" title="运行新容器"></a>运行新容器</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -it ubuntu:16.04 <span class="built_in">echo</span> <span class="string">'hello world!'</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：此处的i 是让docker分配一个伪终端pseudo-tty t的</strong></p>
+<h5 id="查看运行的镜像"><a href="#查看运行的镜像" class="headerlink" title="查看运行的镜像"></a>查看运行的镜像</h5><p><strong>查看当前运行的容器</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure></p>
+<p>参数 -a 是查看存在的所有容器（包括停止的）<br>参数 -l 是显示最新启动的一个容器<br>参数 -q 是仅显示容器的ID<br>参数 -s Display total file sizes</p>
+<h6 id="删除容器-1"><a href="#删除容器-1" class="headerlink" title="删除容器"></a>删除容器</h6><h6 id="删除单个容器"><a href="#删除单个容器" class="headerlink" title="删除单个容器"></a>删除单个容器</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps -a  </span><br><span class="line">sudo docker rm <span class="string">'container ID'</span></span><br></pre></td></tr></table></figure>
+<h6 id="删除多个镜像"><a href="#删除多个镜像" class="headerlink" title="删除多个镜像"></a>删除多个镜像</h6><p>删除status为退出的container<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rm $(sudo docker -qf status=exited)</span><br></pre></td></tr></table></figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-rm-command.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h6 id="删除镜像-1"><a href="#删除镜像-1" class="headerlink" title="删除镜像"></a>删除镜像</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rmi 镜像ID</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://yugepic-1253731526.cos.ap-beijing.myqcloud.com/docker-rmi-image-id.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h2><h3 id="基于已有镜像创建镜像"><a href="#基于已有镜像创建镜像" class="headerlink" title="基于已有镜像创建镜像"></a>基于已有镜像创建镜像</h3><p>command such as sudo docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</p>
+<h2 id="存储和载入镜像"><a href="#存储和载入镜像" class="headerlink" title="存储和载入镜像"></a>存储和载入镜像</h2><h3 id="存储镜像"><a href="#存储镜像" class="headerlink" title="存储镜像"></a>存储镜像</h3><h3 id="载入镜像"><a href="#载入镜像" class="headerlink" title="载入镜像"></a>载入镜像</h3><h2 id="上传镜像"><a href="#上传镜像" class="headerlink" title="上传镜像"></a>上传镜像</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-13T04:04:21.016Z" itemprop="dateUpdated">2018-08-13 12:04:21</time>
+</span><br>
+
+
+        
+        所有文章遵循CC4.0约定，转载请注明作者及来源 ，本文地址：<a href="/docker-base-command/" target="_blank" rel="external">https://aclihui.com/docker-base-command/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://aclihui.com">
+            <img src="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" alt="HUI">
+            HUI
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-command/">docker command</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aclihui.com/docker-base-command/&title=《docker基础命令代码》 — HUI BLOG&pic=https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aclihui.com/docker-base-command/&title=《docker基础命令代码》 — HUI BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://aclihui.com/docker-base-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《docker基础命令代码》 — HUI BLOG&url=https://aclihui.com/docker-base-command/&via=https://aclihui.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://aclihui.com/docker-base-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018-8-8-note/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">随笔</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/docker-pull-test/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">docker pull 试用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "2xPdLzEW21g8LxK8ssE9Mhrs-gzGzoHsz",
+            appKey: "8Fa08hqopNmr4786Vr6WLk4O",
+            avatar: "mm",
+            placeholder: "留下你的小脚印 o(*////▽////*)q",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p><a href="https://www.kymjs.com/" target="_blank" class="rss" title="rss">开源实验室</a></p>
+        <p><a href="https://chungzh.cn/" target="_blank" class="rss" title="rss">ChungZH</a></p>
+        <p>
+            
+                <span><a href="/rss2.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HUI &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aclihui.com/docker-base-command/&title=《docker基础命令代码》 — HUI BLOG&pic=https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aclihui.com/docker-base-command/&title=《docker基础命令代码》 — HUI BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://aclihui.com/docker-base-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《docker基础命令代码》 — HUI BLOG&url=https://aclihui.com/docker-base-command/&via=https://aclihui.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://aclihui.com/docker-base-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://aclihui.com/docker-base-command/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
