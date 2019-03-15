@@ -327,7 +327,7 @@ core versionused by uname -a to check itthe core version must update to 3.10非�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        代码如下：12345678910111213141516171819202122232425262728293031323334353637383940&lt;?php$t_url = preg_replace(&apos;/^url=(.*)$/i&apos;,&apos;$1&apos;,$_SERVER[&quot;QUERY_STRING&quot;]);  if(!emptyemp...
+        代码如下：12345678910111213141516171819202122232425262728293031323334353637383940&lt;?php$t_url = preg_replace('/^url=(.*)$/i','$1',$_SERVER["QUERY_STRING"]);  if(!emptyempty($t_url)) &#123;      preg_m...
     
 
         <a href="/gonext/" class="post-more waves-effect waves-button">
