@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://aclihui.com/tensorflow-install/</loc>
+    <lastmod>2019-05-25T06:35:15.658Z</lastmod>
+  </url>  <url>
     <loc>https://aclihui.com/yibu/</loc>
     <lastmod>2018-12-31T14:44:34.913Z</lastmod>
   </url>  <url>
@@ -27,9 +30,6 @@
   </url>  <url>
     <loc>https://aclihui.com/octave-rumen/</loc>
     <lastmod>2018-12-22T15:35:22.972Z</lastmod>
-  </url>  <url>
-    <loc>https://aclihui.com/tensorflow-install/</loc>
-    <lastmod>2018-12-21T15:29:15.588Z</lastmod>
   </url>  <url>
     <loc>https://aclihui.com/automation-think/</loc>
     <lastmod>2018-12-21T03:00:36.425Z</lastmod>
