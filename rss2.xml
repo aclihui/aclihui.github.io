@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 31 Dec 2018 14:44:34 GMT</pubDate>
+    <pubDate>Sun, 26 May 2019 07:46:26 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,7 +18,15 @@
       <pubDate>Mon, 31 Dec 2018 14:43:50 GMT</pubDate>
       <description>
       
+        
+        
+          &lt;h1 id=&quot;异步传输问题&quot;&gt;&lt;a href=&quot;#异步传输问题&quot; class=&quot;headerlink&quot; title=&quot;异步传输问题&quot;&gt;&lt;/a&gt;异步传输问题&lt;/h1&gt;&lt;p&gt;异步传输可以明显的降低网页的拥塞，Nodejs中也强调了异步的使用。&lt;/p&gt;
+
+        
+      
       </description>
+      
+      <content:encoded><![CDATA[<h1 id="异步传输问题"><a href="#异步传输问题" class="headerlink" title="异步传输问题"></a>异步传输问题</h1><p>异步传输可以明显的降低网页的拥塞，Nodejs中也强调了异步的使用。</p>]]></content:encoded>
       
       <comments>https://aclihui.com/yibu/#disqus_thread</comments>
     </item>
@@ -577,25 +585,6 @@
     </item>
     
     <item>
-      <title>LeetCode-283. Move Zeroes</title>
-      <link>https://aclihui.com/leetcode-283-move-zeroes/</link>
-      <guid>https://aclihui.com/leetcode-283-move-zeroes/</guid>
-      <pubDate>Thu, 30 Aug 2018 12:51:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array nums, write a function to move all 0’s to the end of it
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p><p>Note:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You must do this in-place without making a copy of the array.</span><br><span class="line">Minimize the total number of operations.</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>此题比较基础，这就是冒泡排序的变形版，题目的要求不能新开辟新的数组空间，将所有的操作的的操作步数最小化。   </p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;numsSize ; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=nums[i];</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">                nums[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize=<span class="keyword">sizeof</span>(nums)/ <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    输出为[1,3,12,0,0]</span></span><br><span class="line"><span class="comment">//    执行函数</span></span><br><span class="line">    moveZeroes(nums,numsSize);</span><br><span class="line"><span class="comment">//    输出每个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d,"</span>,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      <comments>https://aclihui.com/leetcode-283-move-zeroes/#disqus_thread</comments>
-    </item>
-    
-    <item>
       <title>LeetCode-258. Add Digits</title>
       <link>https://aclihui.com/leetcode-258-add-digits/</link>
       <guid>https://aclihui.com/leetcode-258-add-digits/</guid>
@@ -612,6 +601,25 @@
       <content:encoded><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 38</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2. </span><br><span class="line">             Since 2 has only one digit, return it.</span><br></pre></td></tr></table></figure></p><p>Follow up:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could you do it without any loop/recursion in O(1) runtime?</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个数字根的问题，此题的解法其实有很多，但是最后一句换你能在时间复杂度为1的qiang</p>]]></content:encoded>
       
       <comments>https://aclihui.com/leetcode-258-add-digits/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>LeetCode-283. Move Zeroes</title>
+      <link>https://aclihui.com/leetcode-283-move-zeroes/</link>
+      <guid>https://aclihui.com/leetcode-283-move-zeroes/</guid>
+      <pubDate>Thu, 30 Aug 2018 12:51:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array nums, write a function to move all 0’s to the end of it
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p><p>Note:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You must do this in-place without making a copy of the array.</span><br><span class="line">Minimize the total number of operations.</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>此题比较基础，这就是冒泡排序的变形版，题目的要求不能新开辟新的数组空间，将所有的操作的的操作步数最小化。   </p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;numsSize ; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=nums[i];</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">                nums[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize=<span class="keyword">sizeof</span>(nums)/ <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    输出为[1,3,12,0,0]</span></span><br><span class="line"><span class="comment">//    执行函数</span></span><br><span class="line">    moveZeroes(nums,numsSize);</span><br><span class="line"><span class="comment">//    输出每个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d,"</span>,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>https://aclihui.com/leetcode-283-move-zeroes/#disqus_thread</comments>
     </item>
     
     <item>
