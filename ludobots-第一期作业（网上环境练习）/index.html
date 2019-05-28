@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-116093450-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+    
+<!-- Tencent Speed -->
+<script>var _speedMark = new Date()</script>
+<!-- End Tencent Speed -->
+<!-- Tencent Analysis -->
+<script async src="//tajs.qq.com/stats?sId=66122903"></script>
+<!-- End Tencent Analysis -->
+
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?a9c1cf8118bdef8b37aac48cbf274638"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ludobots_第一期作业（网上环境练习） | HUI BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="占位标签">
+    <meta name="description" content="第一天 其中在开篇的的时候谈到了遗传算法（Genetic Algorithm来自 &amp;lt;https://blog.csdn.net/u010451580/article/details/51178225&amp;gt;）的问题 相关链接 https://blog.csdn.net/u010451580/article/details/51178225 演化算法的过程Anatomy of an evolu">
+<meta name="keywords" content="占位标签">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ludobots_第一期作业（网上环境练习）">
+<meta property="og:url" content="https://aclihui.com/ludobots-第一期作业（网上环境练习）/index.html">
+<meta property="og:site_name" content="HUI BLOG">
+<meta property="og:description" content="第一天 其中在开篇的的时候谈到了遗传算法（Genetic Algorithm来自 &amp;lt;https://blog.csdn.net/u010451580/article/details/51178225&amp;gt;）的问题 相关链接 https://blog.csdn.net/u010451580/article/details/51178225 演化算法的过程Anatomy of an evolu">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://aclihui-blog-1253731526.cos.ap-beijing.myqcloud.com/wp-content/uploads/2019/02/img_5c60249f463b7.png">
+<meta property="og:updated_time" content="2019-05-28T11:55:59.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ludobots_第一期作业（网上环境练习）">
+<meta name="twitter:description" content="第一天 其中在开篇的的时候谈到了遗传算法（Genetic Algorithm来自 &amp;lt;https://blog.csdn.net/u010451580/article/details/51178225&amp;gt;）的问题 相关链接 https://blog.csdn.net/u010451580/article/details/51178225 演化算法的过程Anatomy of an evolu">
+<meta name="twitter:image" content="https://aclihui-blog-1253731526.cos.ap-beijing.myqcloud.com/wp-content/uploads/2019/02/img_5c60249f463b7.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="HUI BLOG" href="/rss2.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" class="avatar waves-effect waves-circle waves-light">
+          <img src="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HUI</h5>
+          <a href="mailto:i@aclihui.com" title="i@aclihui.com" class="mail">i@aclihui.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/aclihui" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ludobots_第一期作业（网上环境练习）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ludobots_第一期作业（网上环境练习）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-07T15:21:17.000Z" itemprop="datePublished" class="page-time">
+  2019-02-07
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/占位分类/">占位分类</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.</span> <span class="post-toc-text">演化算法的过程</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ludobots-第一期作业（网上环境练习）" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ludobots_第一期作业（网上环境练习）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-07 23:21:17" datetime="2019-02-07T15:21:17.000Z" itemprop="datePublished">2019-02-07</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/占位分类/">占位分类</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>第一天 其中在开篇的的时候谈到了遗传算法<strong>（</strong><br>Genetic Algorithm<br>来自 &lt;<em><a href="https://blog.csdn.net/u010451580/article/details/51178225" target="_blank" rel="noopener">https://blog.csdn.net/u010451580/article/details/51178225</a></em>&gt;<br><strong>）</strong>的问题 相关链接 <a href="https://blog.csdn.net/u010451580/article/details/51178225" target="_blank" rel="noopener">https://blog.csdn.net/u010451580/article/details/51178225</a></p>
+<p></p><h3>演化算法的过程</h3><br>Anatomy of an evolutionary robotics experiment:<p></p>
+<p><ol><br>     <li>Create a task environment.</li><br>     <li>Create the robot.</li><br>     <li>Create the robot’s brain, or Artificial Neural Network (ANN).</li><br>     <li>Use an evolutionary algorithm to optimize the ANN so that the robot performs the</li><br></ol><br>desired task in its environment.<br>Week plan<br>Week 1 to Week 10<br>Complete the weekly work of the question<br>Weeks 11 to 14: Use the system to conduct an evolutionary robotics experiment.</p>
+<p><ol><br>     <li>Given the same optimizer, neural network and eight hours of behavior</li><br></ol><br>optimization on the same computer, does a quadrupedal robot evolve to walk</p>
+<p>further or not as far as a hexapedal robot, or is there no significant difference?</p>
+<p><ol start="2"><br>     <li>Create five fitness functions that not only select for locomotion on the quadrupedal</li><br></ol><br>robot, but each also selects for a particular gait: walking, trotting, canter, galloping</p>
+<p>and pronking.</p>
+<p><ol start="3"><br>     <li>Create a fitness function that rewards NNs for locomotion, but penalizes them for</li><br></ol><br>requiring a lot of energy to realize the gait. This is difficult, as there are two</p>
+<p>solutions that are not desirable: evolution finds fast but inefficient gaits, or ‘gaits’ in</p>
+<p>which the robot does not move, and therefore does not consume energy.</p>
+<p><ol start="4"><br>     <li>Equip the robot with a simulated laser range finder, which tells the robot about</li><br></ol><br>objects in its environment. Evolve a robot that walks toward round objects, but<br>walks away from rectangular objects.<br>Assign 1<br>The web <a href="http://www.uvm.edu/~mwagy/robots/dotbot/db.html" target="_blank" rel="noopener">http://www.uvm.edu/~mwagy/robots/dotbot/db.html</a><br><a href="https://aclihui-blog-1253731526.cos.ap-beijing.myqcloud.com/wp-content/uploads/2019/02/img_5c60249f463b7.png" target="_blank" rel="noopener"><img class="aligncenter size-full wp-image-209" src="https://aclihui-blog-1253731526.cos.ap-beijing.myqcloud.com/wp-content/uploads/2019/02/img_5c60249f463b7.png" alt=""></a><br><a href="https://s2.ax1x.com/2019/01/14/FxVlJf.jpg" target="_blank" rel="noopener">https://s2.ax1x.com/2019/01/14/FxVlJf.jpg</a><br>The next is to intall <strong>Pyrosim </strong>来自 &lt;<a href="https://www.reddit.com/r/ludobots/wiki/pyrosim/simulation" target="_blank" rel="noopener">https://www.reddit.com/r/ludobots/wiki/pyrosim/simulation</a>&gt;</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-28T11:55:59.297Z" itemprop="dateUpdated">2019-05-28 19:55:59</time>
+</span><br>
+
+
+        
+        所有文章遵循CC4.0约定，转载请注明作者及来源 ，本文地址：<a href="/ludobots-第一期作业（网上环境练习）/" target="_blank" rel="external">https://aclihui.com/ludobots-第一期作业（网上环境练习）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://aclihui.com">
+            <img src="https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" alt="HUI">
+            HUI
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/占位标签/">占位标签</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/&title=《ludobots_第一期作业（网上环境练习）》 — HUI BLOG&pic=https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/&title=《ludobots_第一期作业（网上环境练习）》 — HUI BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://aclihui.com/ludobots-第一期作业（网上环境练习）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ludobots_第一期作业（网上环境练习）》 — HUI BLOG&url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/&via=https://aclihui.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/安装部署环境/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">安装部署环境</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/algorithm-note-hufan-note/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">算法笔记_胡凡读书笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "2xPdLzEW21g8LxK8ssE9Mhrs-gzGzoHsz",
+            appKey: "8Fa08hqopNmr4786Vr6WLk4O",
+            avatar: "mm",
+            placeholder: "留下你的小脚印 o(*////▽////*)q",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p><a href="https://www.kymjs.com/" target="_blank" class="rss" title="rss">开源实验室</a></p>
+        <p><a href="https://chungzh.cn/" target="_blank" class="rss" title="rss">ChungZH</a></p>
+        <p>
+            
+                <span><a href="/rss2.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HUI &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/&title=《ludobots_第一期作业（网上环境练习）》 — HUI BLOG&pic=https://s.gravatar.com/avatar/606a21786076a2182cfa81fb5f71a93a?s=80/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/&title=《ludobots_第一期作业（网上环境练习）》 — HUI BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://aclihui.com/ludobots-第一期作业（网上环境练习）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ludobots_第一期作业（网上环境练习）》 — HUI BLOG&url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/&via=https://aclihui.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://aclihui.com/ludobots-第一期作业（网上环境练习）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://aclihui.com/ludobots-第一期作业（网上环境练习）/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
