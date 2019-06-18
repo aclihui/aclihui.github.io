@@ -18,18 +18,18 @@
   
   
   <title>linux的知识 | Hexo</title>
-  <meta name="description" content="起因今天学习了Linux的git ssh-keygen的创建和多用户的知识 ssh-key 初始化+生成首先是用户名邮箱的设置12git config --global user.name aclihuigit config --global user.email i@aclihui.com 密钥的生成 此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）  1ssh-keygen -c">
+  <meta name="description" content="起因今天学习了Linux的git ssh-keygen的创建和多用户的知识 ssh-key 初始化+生成首先是用户名邮箱的设置12git config --global user.name aclihuigit config --global user.email i@aclihui.com 密钥的生成 此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）  1ssh-keygen -t">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux的知识">
 <meta property="og:url" content="https://aclihui.com/linux-know/index.html">
 <meta property="og:site_name" content="HUI BLOG">
-<meta property="og:description" content="起因今天学习了Linux的git ssh-keygen的创建和多用户的知识 ssh-key 初始化+生成首先是用户名邮箱的设置12git config --global user.name aclihuigit config --global user.email i@aclihui.com 密钥的生成 此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）  1ssh-keygen -c">
+<meta property="og:description" content="起因今天学习了Linux的git ssh-keygen的创建和多用户的知识 ssh-key 初始化+生成首先是用户名邮箱的设置12git config --global user.name aclihuigit config --global user.email i@aclihui.com 密钥的生成 此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）  1ssh-keygen -t">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-18T07:23:26.659Z">
+<meta property="og:updated_time" content="2019-06-18T07:29:49.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux的知识">
-<meta name="twitter:description" content="起因今天学习了Linux的git ssh-keygen的创建和多用户的知识 ssh-key 初始化+生成首先是用户名邮箱的设置12git config --global user.name aclihuigit config --global user.email i@aclihui.com 密钥的生成 此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）  1ssh-keygen -c">
+<meta name="twitter:description" content="起因今天学习了Linux的git ssh-keygen的创建和多用户的知识 ssh-key 初始化+生成首先是用户名邮箱的设置12git config --global user.name aclihuigit config --global user.email i@aclihui.com 密钥的生成 此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）  1ssh-keygen -t">
   <!-- Canonical links -->
   <link rel="canonical" href="https://aclihui.com/linux-know/index.html">
   
@@ -387,7 +387,7 @@
 <h2 id="密钥的生成"><a href="#密钥的生成" class="headerlink" title="密钥的生成"></a>密钥的生成</h2><blockquote>
 <p><strong>此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）</strong></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -c rsa -T <span class="string">"i@aclihui.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -T <span class="string">"i@aclihui.com"</span></span><br></pre></td></tr></table></figure>
 <p>证书文件 会出现你的用户名下的.ssh 文件中</p>
 
       

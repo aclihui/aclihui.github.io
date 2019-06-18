@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 18 Jun 2019 07:23:26 GMT</pubDate>
+    <pubDate>Tue, 18 Jun 2019 07:29:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -26,7 +26,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>今天学习了Linux的git ssh-keygen的创建和多用户的知识</p><h1 id="ssh-key-初始化-生成"><a href="#ssh-key-初始化-生成" class="headerlink" title="ssh-key 初始化+生成"></a>ssh-key 初始化+生成</h1><h2 id="首先是用户名邮箱的设置"><a href="#首先是用户名邮箱的设置" class="headerlink" title="首先是用户名邮箱的设置"></a>首先是用户名邮箱的设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name aclihui</span><br><span class="line">git config --global user.email i@aclihui.com</span><br></pre></td></tr></table></figure><h2 id="密钥的生成"><a href="#密钥的生成" class="headerlink" title="密钥的生成"></a>密钥的生成</h2><blockquote><p><strong>此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）</strong></p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -c rsa -T <span class="string">"i@aclihui.com"</span></span><br></pre></td></tr></table></figure><p>证书文件 会出现你的用户名下的.ssh 文件中</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>今天学习了Linux的git ssh-keygen的创建和多用户的知识</p><h1 id="ssh-key-初始化-生成"><a href="#ssh-key-初始化-生成" class="headerlink" title="ssh-key 初始化+生成"></a>ssh-key 初始化+生成</h1><h2 id="首先是用户名邮箱的设置"><a href="#首先是用户名邮箱的设置" class="headerlink" title="首先是用户名邮箱的设置"></a>首先是用户名邮箱的设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name aclihui</span><br><span class="line">git config --global user.email i@aclihui.com</span><br></pre></td></tr></table></figure><h2 id="密钥的生成"><a href="#密钥的生成" class="headerlink" title="密钥的生成"></a>密钥的生成</h2><blockquote><p><strong>此时注意：此时要注意在哪个用户下面进行设置（体现多用户的设置）</strong></p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -T <span class="string">"i@aclihui.com"</span></span><br></pre></td></tr></table></figure><p>证书文件 会出现你的用户名下的.ssh 文件中</p>]]></content:encoded>
       
       <comments>https://aclihui.com/linux-know/#disqus_thread</comments>
     </item>
