@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>MVC和MMVC架构 | aclihui</title>
+  <meta name="description" content="初因原文地址：https://www.aclihui.com深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“C">
+<meta name="keywords" content="架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC和MMVC架构">
+<meta property="og:url" content="https://aclihui.com/mvc-and-mmvc/index.html">
+<meta property="og:site_name" content="HUI BLOG">
+<meta property="og:description" content="初因原文地址：https://www.aclihui.com深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“C">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png">
+<meta property="og:updated_time" content="2018-12-16T12:51:31.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MVC和MMVC架构">
+<meta name="twitter:description" content="初因原文地址：https://www.aclihui.com深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。 MVC架构M:Model模型 V: View视图 C:Controller控制器 模型（来自维基百科的解释,注1）M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“C">
+<meta name="twitter:image" content="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://aclihui.com/mvc-and-mmvc/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="HUI BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/aclihui" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">aclihui</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Beijing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索">
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech="">
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope="" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/aclihui" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle="tooltip" data-placement="top"><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope="" itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/API/">API</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CODE/">CODE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/PHP/">PHP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/ACM/">ACM</a><span class="category-list-count">18</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Command/">Command</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJS/">NodeJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WordPress/">WordPress</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WordPress/Docker/">Docker</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/chrome/">chrome</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/container/">container</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/windows/">windows</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jenkins/">jenkins</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/octave/">octave</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/qumu/">qumu</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/不分类/">不分类</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/主题/">主题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/公告/">公告</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/占位分类/">占位分类</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/后台/">后台</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安卓/">安卓</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/安卓/登录界面/">登录界面</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/建站记录/">建站记录</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/感悟/">感悟</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/其他/">其他</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络分析/">网络分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/节日/">节日</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/蓝桥杯/">蓝桥杯</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CODE/">CODE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Command/">Command</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WEB/">WEB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/">WordPress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/container/">container</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-command/">docker command</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/octave/">octave</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qemu/">qemu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/">script</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/不分类/">不分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题/">主题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公告/">公告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/占位标签/">占位标签</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后台/">后台</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓/">安卓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建站记录/">建站记录</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/感悟/">感悟</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/素材/">素材</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络分析/">网络分析</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页素材/">网页素材</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/节日/">节日</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/蓝桥杯/">蓝桥杯</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/起航/">起航</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/ACM/" style="font-size: 14px;">ACM</a> <a href="/tags/API/" style="font-size: 13px;">API</a> <a href="/tags/Android/" style="font-size: 13.17px;">Android</a> <a href="/tags/C/" style="font-size: 13.17px;">C++</a> <a href="/tags/CODE/" style="font-size: 13.17px;">CODE</a> <a href="/tags/Command/" style="font-size: 13px;">Command</a> <a href="/tags/Docker/" style="font-size: 13.33px;">Docker</a> <a href="/tags/JavaScript/" style="font-size: 13.5px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 13px;">Javascript</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/NodeJS/" style="font-size: 13px;">NodeJS</a> <a href="/tags/PHP/" style="font-size: 13px;">PHP</a> <a href="/tags/TensorFlow/" style="font-size: 13px;">TensorFlow</a> <a href="/tags/WEB/" style="font-size: 13px;">WEB</a> <a href="/tags/WordPress/" style="font-size: 13px;">WordPress</a> <a href="/tags/android/" style="font-size: 13px;">android</a> <a href="/tags/container/" style="font-size: 13px;">container</a> <a href="/tags/docker/" style="font-size: 13.67px;">docker</a> <a href="/tags/docker-command/" style="font-size: 13px;">docker command</a> <a href="/tags/jenkins/" style="font-size: 13px;">jenkins</a> <a href="/tags/octave/" style="font-size: 13px;">octave</a> <a href="/tags/qemu/" style="font-size: 13px;">qemu</a> <a href="/tags/script/" style="font-size: 13px;">script</a> <a href="/tags/windows/" style="font-size: 13px;">windows</a> <a href="/tags/不分类/" style="font-size: 13px;">不分类</a> <a href="/tags/主题/" style="font-size: 13px;">主题</a> <a href="/tags/公告/" style="font-size: 13px;">公告</a> <a href="/tags/其他/" style="font-size: 13px;">其他</a> <a href="/tags/占位标签/" style="font-size: 13.5px;">占位标签</a> <a href="/tags/后台/" style="font-size: 13px;">后台</a> <a href="/tags/安卓/" style="font-size: 13px;">安卓</a> <a href="/tags/建站记录/" style="font-size: 13.17px;">建站记录</a> <a href="/tags/感悟/" style="font-size: 13px;">感悟</a> <a href="/tags/技巧/" style="font-size: 13.17px;">技巧</a> <a href="/tags/日志/" style="font-size: 13px;">日志</a> <a href="/tags/机器学习/" style="font-size: 13.17px;">机器学习</a> <a href="/tags/架构/" style="font-size: 13px;">架构</a> <a href="/tags/正则表达式/" style="font-size: 13px;">正则表达式</a> <a href="/tags/笔记/" style="font-size: 13px;">笔记</a> <a href="/tags/算法/" style="font-size: 13.17px;">算法</a> <a href="/tags/素材/" style="font-size: 13px;">素材</a> <a href="/tags/网络分析/" style="font-size: 13px;">网络分析</a> <a href="/tags/网页素材/" style="font-size: 13.17px;">网页素材</a> <a href="/tags/节日/" style="font-size: 13.17px;">节日</a> <a href="/tags/蓝桥杯/" style="font-size: 13.83px;">蓝桥杯</a> <a href="/tags/设计模式/" style="font-size: 13px;">设计模式</a> <a href="/tags/起航/" style="font-size: 13px;">起航</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/网络分析/">网络分析</a>
+              </p>
+              <p class="item-title">
+                <a href="/web-analysis/" class="title">网络数据报分析</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-29T00:28:40.000Z" itemprop="datePublished">2019-06-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/占位分类/">占位分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/果然宿舍还是不适合我/" class="title">果然宿舍还是不适合我</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-19T00:22:54.000Z" itemprop="datePublished">2019-06-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Linux/">Linux</a>
+              </p>
+              <p class="item-title">
+                <a href="/linux-know/" class="title">linux的知识</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-18T07:15:46.000Z" itemprop="datePublished">2019-06-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/chrome/">chrome</a>
+              </p>
+              <p class="item-title">
+                <a href="/chrome-tip/" class="title">chrome可视化</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-02T13:51:00.000Z" itemprop="datePublished">2019-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/感悟/">感悟</a>
+              </p>
+              <p class="item-title">
+                <a href="/think-2019-4-13/" class="title">有时候，我们发现我们想找近路，却走了最远的路。</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-04-13T13:04:00.000Z" itemprop="datePublished">2019-04-13</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-mvc-and-mmvc" class="article article-type-post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MVC和MMVC架构
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/mvc-and-mmvc/" class="article-date">
+	  <time datetime="2018-12-16T12:11:52.000Z" itemprop="datePublished">2018-12-16</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/架构/">架构</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/架构/">架构</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/mvc-and-mmvc/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="初因"><a href="#初因" class="headerlink" title="初因"></a>初因</h1><p>原文地址：<a href="https://www.aclihui.com" target="_blank" rel="noopener">https://www.aclihui.com</a><br>深入了解MVV 架构和MMVC架构,为以后软件设计打下基础。</p>
+<h1 id="MVC架构"><a href="#MVC架构" class="headerlink" title="MVC架构"></a>MVC架构</h1><p>M:Model模型 V: View视图 C:Controller控制器</p>
+<h2 id="模型（来自维基百科的解释-注1）"><a href="#模型（来自维基百科的解释-注1）" class="headerlink" title="模型（来自维基百科的解释,注1）"></a>模型（来自维基百科的解释,注1）</h2><p>M:用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。“ Model ”有对数据直接访问的权力，例如对数据库的访问。“Model”不依赖“View”和“Controller”，也就是说， Model 不关心它会被如何显示或是如何被操作。但是 Model 中数据的变化一般会通过一种刷新机制被公布。为了实现这种机制，那些用于监视此 Model 的 View 必须事先在此 Model 上注册，从而，View 可以了解在数据 Model 上发生的改变。（比如：观察者模式（软件设计模式））  </p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>V:能够实现数据有目的的显示（理论上，这不是必需的）。在 View 中一般没有程序上的逻辑。为了实现 View 上的刷新功能，View 需要访问它监视的数据模型（Model），因此应该事先在被它监视的数据那里注册。    </p>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p>起到不同层面间的组织作用，用于控制应用程序的流程。它处理事件并作出响应。“事件”包括用户的行为和数据 Model 上的改变。<br>展示图:<br><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20181216203152.png" alt=""><br>此时我们发现，相互关系如图所示。<br>M负责控制View的显示，V需要时刻监视M的情况，而C则为相事件对M进行处理。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MVC架构是一种业务逻辑和数据分离的方法，<strong>这个方法假设前提是如果业务逻辑被聚集到一个部件里面，而且页面和用户围绕数据的交互能被改进和个性化而不需要重新编写业务逻辑</strong>。MVC被独特的发展起来用于映射传统的输入，处理和输出功能在一个逻辑的图形化界面结构中。(注2)</p>
+<h1 id="MMVC"><a href="#MMVC" class="headerlink" title="MMVC"></a>MMVC</h1><p>MMVC是在MVC中间加入一层ViewModel起到适配（一些Model建模为了与其他系统实现完全隔离，存储的只是id，此处需要根据id去组装起所需的数据）,隔离扩展。</p>
+<h2 id="M"><a href="#M" class="headerlink" title="M"></a>M</h2><p>完全隔离的Model只会被引用（监视），不会引用外部的东西，通常只会对需要的数据进行建模（比如id），不需要的数据则不需要进行建模。</p>
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>承担各种界面事件交互逻辑，其核心关键词是：数据展示、操作。其中除了特定的操作、交互功能外，最为重要的三个功能点，即是初始化、刷新、返回值、事件。        </p>
+<h2 id="ViewModle"><a href="#ViewModle" class="headerlink" title="ViewModle"></a>ViewModle</h2><p>网站上没有多少介绍</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>和MVC架构基本相同。</p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>1.<br>2.<a href="https://www.cnblogs.com/suriyel/articles/3332408.html" target="_blank" rel="noopener">https://www.cnblogs.com/suriyel/articles/3332408.html</a></p>
+<h2 id="MVC实现"><a href="#MVC实现" class="headerlink" title="MVC实现"></a>MVC实现</h2><h3 id="MFC"><a href="#MFC" class="headerlink" title="MFC"></a>MFC</h3><p>微软所推出的MFC Document/View架构是早期对于MVC模式的实现，MFC将程序分成CView以及CDocument两大类别，其中的Document对应MVC中的 Model ，View 相当于MVC中的 View＋Controller，再加上CWinApp类别，合成三大项。但是基本上MFC是一个失败的MVC模式作品。</p>
+<p>由于MFC之下的Document/View 定义过于模糊，未将Controller（MessageMap）部分取出，因此 Controller 可以置入 View 或Document，但不管置入哪一方面，都会与View或Document绑死，没有弹性。</p>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>Java 平台企业版 (J2EE)<br>和其他的各种框架不一样，J2EE为模型对象（Model Objects）定义了一个规范。</p>
+<p>视图(View)<br>在J2EE应用程序中，视图（View）可能由Java Server Page(JSP)担任。生成 View 的代码则可能是一个servlet的一部分，特别是在客户端服务端交互的时候。<br>控制器（Controller）<br>J2EE应用中，Controller 可能是一个servlet。<br>除了可直接以J2EE来撰写外，亦可用其他框架来撰写，常见的有Struts2、Spring Framework……等等。<br>模型（Model）<br>Model 则是由一个实体Bean来实现。<br>Java Swing<br>Swing是一个标准的MVC结构. ComponentUI代表 View, 负责描画组件. 组件尤其 Model 层, 比如JTextField的Document, JTable的TableModel, JTree的TreeModel等等. 而Control可能不是很明显, 我们或许可以简单的将其Event机制看作一个Swing团队开发给开发者的 Controller。</p>
+<p>作为Java开发者, 如果想理解MVC的结构, 学习Swing的确是个不错的选择.</p>
+<h3 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h3><p>ASP.NET<br>在ASP.NET中，针对视图（View）和控制器（Controller）的模式没有被很好地定义。而模型（Model）则留给开发者去设计。</p>
+<p>视图（View）<br>ASPX和ASCX文件被用来处理 View 的职责。在这个设计中 View 实际上是从 Controller 继承而来。这个和Smalltalk的实施有所不同，在Smalltalk中不同的类都有指针互相指向对方.<br>控制器（Controllers）<br>Controller 的职责被分割成两部分。事件（Event）的产生和传输是框架的一部分，更明确的说是Page和Control两个类。而事件的处理则在分离的代码中实现。<br>模型（Model）<br>ASP.NET 不严格需要一个 Model。开发者可以自行选择创建一个 Model 类，但是很多人选择放弃这一步，直接把事件处理放在 Controller 里处理任何计算、数据保存等等。但用 Model 来包含商业逻辑和数据访问是可实现的。<br>ASP.NET MVC<br>ASP.NET MVC，在2013年10月17日稳定版本已到5.0版。[3]<br>此外，在ASP.NET MVC中，一般情况下Model通常搭配LINQ to SQL类别（使用O/R Designer工具所制作而成的DBML档）或ADO.NET实体数据模型（Entity Data Model，使用ADO.NET Entity Framework制作出的EDMX档）来实现。</p>
+<h3 id="Windows-Forms"><a href="#Windows-Forms" class="headerlink" title="Windows Forms"></a>Windows Forms</h3><p>在WinForms中，这个针对视图（View）和控制器（Controller）的模式已经很好的定义。而模型（Model）则留给开发者去设计。</p>
+<p>视图（View）<br>由Form或者Control类继承来的一个类处理 View 的职责。在WinForm这个例子中 View 和 Controller 被编译在同一个类中，这个和ASP.NET不同。<br>控制器（Controller）<br>Controller 的职责被分割成三部分。事件（Event）的产生和传输是操作系统的一部分。在.Net框架中Form和Control类将不同的事件转发给相应的事件处理器。而事件的处理则在分离的代码中实现。<br>模型（Model）<br>就像ASP.NET一样，WinForm不严格需要一个 Model。开发者可以自行选择创建一个 Model 类，但是很多人选择放弃这一步，直接把事件处理放在 Controller 里处理任何计算、数据保存等等。也就是说用Model来包含商业逻辑和数据访问。</p>
+<h3 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h3><p>Catalyst和Jifty是透过Perl语言所开发出来的Web Framework，都采用Model-View-Controller 架构。Catalyst 本身只是做了 Controller，View 和 Model 让开发者自由选用 CPAN 上的模块开发，例如 Template 和 Template Declare 都可用来产生视图。Jifty 将 MVC 完全实做完成，View 的部分在早期版本使用 Mason 实做，较新版本使用 Template Declare。</p>
+<h3 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h3><p>Ruby on Rails是透过Ruby语言所开发出来的 Web Framework，也是采用 Model-View-Controller 架构。Model 部分使用 Active Record 概念实做，加上 Migration 机制，使得其 Model 结构非常容易控制。</p>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python 有许多的 MVC 架构。最常用的有 Django 和 TurboGears。</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Backbone.js<br>Angular.js<br>Ember.js<br>JavaScriptMVC<br>Model-View-Controller (MVC) with JavaScript</p>
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>CakePHP<br>CodeIgniter<br>prado<br>symfony<br>Yii Framework<br>Zend Framework<br>Phalcon<br>Laravel<br>ThinkPHP</p>
+<h3 id="ActionScript-3"><a href="#ActionScript-3" class="headerlink" title="ActionScript 3"></a>ActionScript 3</h3><p>PureMVC Standard for ActionScript 3</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://aclihui.com/mvc-and-mmvc/" title="MVC和MMVC架构" target="_blank" rel="external">https://aclihui.com/mvc-and-mmvc/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/aclihui" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/aclihui" target="_blank"><span class="text-dark">aclihui</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>相信未来</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom="">
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/android-login/" title="安卓简单登录界面"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/docker-first-install/" title="第一次安装docker"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫">
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫">
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/aclihui" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle="tooltip" data-placement="top"><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2019 HUI
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
