@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 19 Jun 2019 00:22:54 GMT</pubDate>
+    <pubDate>Sat, 29 Jun 2019 01:17:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>网络数据报分析</title>
+      <link>https://aclihui.com/web-analysis/</link>
+      <guid>https://aclihui.com/web-analysis/</guid>
+      <pubDate>Sat, 29 Jun 2019 00:28:40 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;今天正好写网络报告，涉及到网络分析的这一栏发现了一些问题，在此总结一些。&lt;/p&gt;
+&lt;h1 id=&quot;网络数据报文-分析&quot;&gt;&lt;a href=&quot;#
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天正好写网络报告，涉及到网络分析的这一栏发现了一些问题，在此总结一些。</p><h1 id="网络数据报文-分析"><a href="#网络数据报文-分析" class="headerlink" title="网络数据报文 分析"></a>网络数据报文 分析</h1><h2 id="第一个知识-dns地址的选择"><a href="#第一个知识-dns地址的选择" class="headerlink" title="第一个知识 dns地址的选择"></a>第一个知识 dns地址的选择</h2><p>我本地的网络配置的不知道什么时候DNS地址修改成了1.1.1.1 因此用wireshark软件进行数据报分析的时候，出现以下的状况<br><img src="https://i.loli.net/2019/06/29/5d16b287d9e2c24517.png" alt=""><br>由此可见首先访问的是目的IP地址为1.1.1.1<br>还有一个问题就是<br><img src="https://i.loli.net/2019/06/29/5d16b3119303a37050.png" alt=""><br>图片中的请求了两次目的域名的IP地址分别是A记录和AAAA记录<br>众所周知 A记录是用来访问IPV4的地址的数据 而AAAA是用来访问IPV6地址的数据<br>由同种可以看出 ipv4 的IP地址为 219.238.2.185<br>而ipv6的地址却只有指定了权威解析服务器地址 而在后面并没有传递ip地址 因此此处（此网站）并没有ipv6的地址 </p><h1 id="三次握手过程"><a href="#三次握手过程" class="headerlink" title="三次握手过程"></a>三次握手过程</h1><p>三次握手的过程<br><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090200.png" alt="三次握手的过程"></p><h2 id="首先是三次握手中的第一次-SYN-1-seq-x-此处为0"><a href="#首先是三次握手中的第一次-SYN-1-seq-x-此处为0" class="headerlink" title="首先是三次握手中的第一次 SYN=1 seq=x 此处为0"></a>首先是三次握手中的第一次 SYN=1 seq=x 此处为0</h2><p><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090053.png" alt="三次握手"><br>第一次 首先置SYN(同步位)的数值为1 但是同步位不可以携带数据 但是需要消耗一个seq序列 此时的seq相当于无效</p><h2 id="第二次-SYN-1-ACK-1-seq-y-ack-x-1"><a href="#第二次-SYN-1-ACK-1-seq-y-ack-x-1" class="headerlink" title="第二次 SYN=1 ACK=1 seq=y ack=x+1"></a>第二次 SYN=1 ACK=1 seq=y ack=x+1</h2><p><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090529.png" alt="第二次握手"><br>第二次握手的时候 服务器收到客户端的报文 发送SYN 同步信号 SYN置为1 然受讲确认号ack=x+1 表示已经收到 接着发送seq=y 同样报文不同够携带数据 但是同时消耗掉一个报文序号，这是TCP服务器进入SYN-RCVD同步状态</p><h2 id="第三次握手-SYN-1-seq-x-1-ack-y-1"><a href="#第三次握手-SYN-1-seq-x-1-ack-y-1" class="headerlink" title="第三次握手 SYN=1 seq=x+1 ack=y+1"></a>第三次握手 SYN=1 seq=x+1 ack=y+1</h2><p><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090835.png" alt="第三次握手"><br>第三次握手 由客户端向服务器发送确认 确认 报文段ACK=1 确认号位y+1表示收到第二次握手时候的数据 这时候发送的seq正是上一次握手中的ack的数据x+1,此报文端 发送完毕 表示这客户端和服务器进入连接成功的状态完成三次握手。</p><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ol><li><a href="https://skyao.io/learning-dns/dns/record/soa.html" target="_blank" rel="noopener">DNS SOA 分析</a></li><li><a href="https://blog.csdn.net/diligentkong/article/details/73351278" target="_blank" rel="noopener">三次握手</a></li></ol>]]></content:encoded>
+      
+      <comments>https://aclihui.com/web-analysis/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>果然宿舍还是不适合我</title>
