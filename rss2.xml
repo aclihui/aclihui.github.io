@@ -8,8 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 29 Jun 2019 01:17:21 GMT</pubDate>
+    <pubDate>Mon, 03 Dec 2018 01:25:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://aclihui.com/hello-world/</link>
+      <guid>https://aclihui.com/hello-world/</guid>
+      <pubDate>Tue, 11 Aug 2020 15:19:41 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content:encoded>
+      
+      <comments>https://aclihui.com/hello-world/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>网络数据报分析</title>
@@ -29,18 +48,6 @@
       <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天正好写网络报告，涉及到网络分析的这一栏发现了一些问题，在此总结一些。</p><h1 id="网络数据报文-分析"><a href="#网络数据报文-分析" class="headerlink" title="网络数据报文 分析"></a>网络数据报文 分析</h1><h2 id="第一个知识-dns地址的选择"><a href="#第一个知识-dns地址的选择" class="headerlink" title="第一个知识 dns地址的选择"></a>第一个知识 dns地址的选择</h2><p>我本地的网络配置的不知道什么时候DNS地址修改成了1.1.1.1 因此用wireshark软件进行数据报分析的时候，出现以下的状况<br><img src="https://i.loli.net/2019/06/29/5d16b287d9e2c24517.png" alt=""><br>由此可见首先访问的是目的IP地址为1.1.1.1<br>还有一个问题就是<br><img src="https://i.loli.net/2019/06/29/5d16b3119303a37050.png" alt=""><br>图片中的请求了两次目的域名的IP地址分别是A记录和AAAA记录<br>众所周知 A记录是用来访问IPV4的地址的数据 而AAAA是用来访问IPV6地址的数据<br>由同种可以看出 ipv4 的IP地址为 219.238.2.185<br>而ipv6的地址却只有指定了权威解析服务器地址 而在后面并没有传递ip地址 因此此处（此网站）并没有ipv6的地址 </p><h1 id="三次握手过程"><a href="#三次握手过程" class="headerlink" title="三次握手过程"></a>三次握手过程</h1><p>三次握手的过程<br><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090200.png" alt="三次握手的过程"></p><h2 id="首先是三次握手中的第一次-SYN-1-seq-x-此处为0"><a href="#首先是三次握手中的第一次-SYN-1-seq-x-此处为0" class="headerlink" title="首先是三次握手中的第一次 SYN=1 seq=x 此处为0"></a>首先是三次握手中的第一次 SYN=1 seq=x 此处为0</h2><p><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090053.png" alt="三次握手"><br>第一次 首先置SYN(同步位)的数值为1 但是同步位不可以携带数据 但是需要消耗一个seq序列 此时的seq相当于无效</p><h2 id="第二次-SYN-1-ACK-1-seq-y-ack-x-1"><a href="#第二次-SYN-1-ACK-1-seq-y-ack-x-1" class="headerlink" title="第二次 SYN=1 ACK=1 seq=y ack=x+1"></a>第二次 SYN=1 ACK=1 seq=y ack=x+1</h2><p><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090529.png" alt="第二次握手"><br>第二次握手的时候 服务器收到客户端的报文 发送SYN 同步信号 SYN置为1 然受讲确认号ack=x+1 表示已经收到 接着发送seq=y 同样报文不同够携带数据 但是同时消耗掉一个报文序号，这是TCP服务器进入SYN-RCVD同步状态</p><h2 id="第三次握手-SYN-1-seq-x-1-ack-y-1"><a href="#第三次握手-SYN-1-seq-x-1-ack-y-1" class="headerlink" title="第三次握手 SYN=1 seq=x+1 ack=y+1"></a>第三次握手 SYN=1 seq=x+1 ack=y+1</h2><p><img src="https://aclihui-1253731526.cos.ap-beijing.myqcloud.com/20190629090835.png" alt="第三次握手"><br>第三次握手 由客户端向服务器发送确认 确认 报文段ACK=1 确认号位y+1表示收到第二次握手时候的数据 这时候发送的seq正是上一次握手中的ack的数据x+1,此报文端 发送完毕 表示这客户端和服务器进入连接成功的状态完成三次握手。</p><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ol><li><a href="https://skyao.io/learning-dns/dns/record/soa.html" target="_blank" rel="noopener">DNS SOA 分析</a></li><li><a href="https://blog.csdn.net/diligentkong/article/details/73351278" target="_blank" rel="noopener">三次握手</a></li></ol>]]></content:encoded>
       
       <comments>https://aclihui.com/web-analysis/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>果然宿舍还是不适合我</title>
-      <link>https://aclihui.com/%E6%9E%9C%E7%84%B6%E5%AE%BF%E8%88%8D%E8%BF%98%E6%98%AF%E4%B8%8D%E9%80%82%E5%90%88%E6%88%91/</link>
-      <guid>https://aclihui.com/%E6%9E%9C%E7%84%B6%E5%AE%BF%E8%88%8D%E8%BF%98%E6%98%AF%E4%B8%8D%E9%80%82%E5%90%88%E6%88%91/</guid>
-      <pubDate>Wed, 19 Jun 2019 00:22:54 GMT</pubDate>
-      <description>
-      
-      </description>
-      
-      <comments>https://aclihui.com/%E6%9E%9C%E7%84%B6%E5%AE%BF%E8%88%8D%E8%BF%98%E6%98%AF%E4%B8%8D%E9%80%82%E5%90%88%E6%88%91/#disqus_thread</comments>
     </item>
     
     <item>
@@ -81,26 +88,6 @@
       <content:encoded><![CDATA[<p>document.body.contentEditable=true<br>一键使得页面可编辑 在线WEB site IDE</p>]]></content:encoded>
       
       <comments>https://aclihui.com/chrome-tip/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>有时候，我们发现我们想找近路，却走了最远的路。</title>
-      <link>https://aclihui.com/think-2019-4-13/</link>
-      <guid>https://aclihui.com/think-2019-4-13/</guid>
-      <pubDate>Sat, 13 Apr 2019 13:04:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;有时候，我们发现我们想找近路，却走了最远的路。—— 尝试了无数次 非官方的中文文档（CSDN中的大佬）没有成功，却自己看tensorflow的官方文档成功了。&lt;/p&gt;
-
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>有时候，我们发现我们想找近路，却走了最远的路。—— 尝试了无数次 非官方的中文文档（CSDN中的大佬）没有成功，却自己看tensorflow的官方文档成功了。</p>]]></content:encoded>
-      
-      <comments>https://aclihui.com/think-2019-4-13/#disqus_thread</comments>
     </item>
     
     <item>
@@ -936,25 +923,6 @@
     </item>
     
     <item>
-      <title>Hello World</title>
-      <link>https://aclihui.com/hello-world/</link>
-      <guid>https://aclihui.com/hello-world/</guid>
-      <pubDate>Sat, 01 Dec 2018 12:22:54 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content:encoded>
-      
-      <comments>https://aclihui.com/hello-world/#disqus_thread</comments>
-    </item>
-    
-    <item>
       <title>安卓菜单</title>
       <link>https://aclihui.com/android-menu/</link>
       <guid>https://aclihui.com/android-menu/</guid>
@@ -1090,25 +1058,6 @@
     </item>
     
     <item>
-      <title>LeetCode-283. Move Zeroes</title>
-      <link>https://aclihui.com/leetcode-283-move-zeroes/</link>
-      <guid>https://aclihui.com/leetcode-283-move-zeroes/</guid>
-      <pubDate>Thu, 30 Aug 2018 12:51:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array nums, write a function to move all 0’s to the end of it
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p><p>Note:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You must do this in-place without making a copy of the array.</span><br><span class="line">Minimize the total number of operations.</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>此题比较基础，这就是冒泡排序的变形版，题目的要求不能新开辟新的数组空间，将所有的操作的的操作步数最小化。   </p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;numsSize ; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=nums[i];</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">                nums[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize=<span class="keyword">sizeof</span>(nums)/ <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    输出为[1,3,12,0,0]</span></span><br><span class="line"><span class="comment">//    执行函数</span></span><br><span class="line">    moveZeroes(nums,numsSize);</span><br><span class="line"><span class="comment">//    输出每个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d,"</span>,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      <comments>https://aclihui.com/leetcode-283-move-zeroes/#disqus_thread</comments>
-    </item>
-    
-    <item>
       <title>LeetCode-258. Add Digits</title>
       <link>https://aclihui.com/leetcode-258-add-digits/</link>
       <guid>https://aclihui.com/leetcode-258-add-digits/</guid>
@@ -1125,6 +1074,25 @@
       <content:encoded><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 38</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2. </span><br><span class="line">             Since 2 has only one digit, return it.</span><br></pre></td></tr></table></figure></p><p>Follow up:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could you do it without any loop/recursion in O(1) runtime?</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这是一个数字根的问题，此题的解法其实有很多，但是最后一句换你能在时间复杂度为1的qiang</p>]]></content:encoded>
       
       <comments>https://aclihui.com/leetcode-258-add-digits/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>LeetCode-283. Move Zeroes</title>
+      <link>https://aclihui.com/leetcode-283-move-zeroes/</link>
+      <guid>https://aclihui.com/leetcode-283-move-zeroes/</guid>
+      <pubDate>Thu, 30 Aug 2018 12:51:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;Given an array nums, write a function to move all 0’s to the end of it
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [0,1,0,3,12]</span><br><span class="line">Output: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p><p>Note:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You must do this in-place without making a copy of the array.</span><br><span class="line">Minimize the total number of operations.</span><br></pre></td></tr></table></figure></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>此题比较基础，这就是冒泡排序的变形版，题目的要求不能新开辟新的数组空间，将所有的操作的的操作步数最小化。   </p><h4 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;numsSize ; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=nums[i];</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">                nums[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nums[]=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> numsSize=<span class="keyword">sizeof</span>(nums)/ <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    输出为[1,3,12,0,0]</span></span><br><span class="line"><span class="comment">//    执行函数</span></span><br><span class="line">    moveZeroes(nums,numsSize);</span><br><span class="line"><span class="comment">//    输出每个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d,"</span>,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>https://aclihui.com/leetcode-283-move-zeroes/#disqus_thread</comments>
     </item>
     
     <item>
